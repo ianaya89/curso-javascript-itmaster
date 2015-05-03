@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Curso JavaScript y jQuery Intensivo</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/site.css">
+
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="init" data-background="#fff">
+        <img src="img/js.png" class="logo">
+        <img src="img/jquery.png" class="logo">
+        <h1>Curso JavaScript y Query Intensivo</h1>
+        <h2>IT Master</h2>
+        <h3>Ignacio Anaya - @ianaya89</h3>
+        <a href="mailto:ignacio.anaya89@gmail.com">ignacio.anaya89@gmail.com</a>
+      </section>
+
+      <section>
+        <h1>Quién soy?</h1>
+        <h2>Ignacio Anaya - @ianaya89</h2>
+        <h3>Software Architect - Web and Mobile Developments</h3>
+        <ul>
+          <li>Twitter</li>
+          <li>GitHub</li>
+          <li>CodePen</li>
+          <li>Stack Overflow</li>
+          <li>LinkedIn</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Proyectos y Empresas</h1>
+      </section>
+
+      <section>
+        <h1>Tecnologias</h1>
+      </section>
+
+      <section>
+        <h1>Herramientas</h1>
+      </section>
+
+      <section>
+        <h1>Agenda</h1>
+        <ul>
+          <li>3 Clases Teorias y 3 Clases Practicas</li>
+          <li>Masrtes y Jueves 19 a 22 hs - Break de 15 m.</li>
+          <li>Material y Diapositivas en GitHub</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Temario</h1>
+        <ul>
+          <li>Dónde y cómo se usa y ejecuta JavaScript.</li>
+          <li>Creación de sitios dinámicos desde el cliente usando JavaScript.</li>
+          <li>Sintaxis y capacidades. Diferencias con otros lenguajes. </li>
+          <li>Definición de variables y funciones.</li>
+          <li>Instrucciones de condición if-switch, bucle while-for.</li>
+          <li>Manejo de objetos en JavaScript.</li>
+          <li>Limitaciones y usos del lenguaje.</li>
+          <li>Diálogos nativos.</li>
+          <li>Validación de formularios.</li>
+          <li>Manejo de eventos.</li>
+          <li>La librería jQuery, qué es y cuándo usarla. Usos y utilidades.</li>
+          <li>Funciones de manipulación de HTML y CSS.</li>
+          <li>Funciones de efectos.</li>
+          <li>El formato JSON y manipulación de datos.</li>
+          <li>Peticiones AJAX: ejemplos, introducción y código.</li>
+          <li>Enviando y recibiendo datos de servicios REST.</li>
+          <li>Trabajando con plugins de jQuery.</li>
+          <li>Depuración de JavaScript y herramientas disponibles.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Bibliografia Recomendada</h1>
+      </section>
+
+      <section>
+        <h1>y Ustedes?</h1>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41753965-1', 'keepe.rs');
+    ga('send', 'pageview');
+
+  </script>
+
+  <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+  </html>
