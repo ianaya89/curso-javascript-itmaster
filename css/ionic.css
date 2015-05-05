@@ -237,3 +237,7 @@ body {
 .reveal table tr td {
   border: 1px solid #fff;
 }
+
+.red {
+  color: red !important;
+}
