@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Curso JavaScript y jQuery Intensivo</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/ionic.css">
+  <!-- <link rel="stylesheet" href="css/site.css"> -->
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h2>Módulo 2: El Lenguage</h2>
+        <ul>
+          <li>Variables</li>
+          <li>Operadores</li>
+          <li>Estructuras Condicionales</li>
+          <li>Estructuras Cíclicas</li>
+          <li>Funciones</li>
+          <li>Sinxtaxis</li>
+        </ul>
+        <br>
+        <iframe src="//giphy.com/embed/MW1Xq9OvkwMso?html5=true" width="480" height="204" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </section>    
+
+      <section>
+        <h2>Variables</h2>
+        <p>Es un contenedor para un valor. Se declaran por medio de la palabra clave <i>var</i> pero no se indica el tipo de dato.</p>
+        <p>Una misma variable puede almacenar diferentes tipo de datos (no simultaneamente) durante su ciclo de vida.</p>
+        <pre>
+          <code>
+            var num = 15;
+            var chars = 'cat';
+            var char2 = 'dog;'
+            var $ = 'jQuery';
+            var _ = 'underscore';
+
+            /* Ejemplos no permitidos
+
+            var -temp = 'some value';
+            var 2num = 2;
+
+            */
+          </code>
+        </pre>
+        <small>Los nombres usados para variables pueden contener letras, numeros o simbolos, pero deben comenzar con <b>letras, '_' o '$'</b>.</small>
+      </section>
+
+      <section>
+        <h2>Tipos de Datos Primitivos</h2>
+        <ul>
+          <li>Number</li>
+          <li>String</li>
+          <li>Boolean</li>
+          <li>null</li>
+          <li>undefined</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Number</h3>
+        <p>No se distinguen entre enteros y decimales.</p>
+        <pre>
+          <code>
+            var x = 6,
+            var y = 3;
+            var z = -7;
+
+            var pi = 3.14;
+
+            var sums = x + y; // 9
+            var mult = x * y; // 18
+            var divs = x / y; // 2
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>String</h3>
+        <p>Son cadenas de caracteres que representan texto.</p>
+        <p>No hay un tipo de dato char (es un string de longitud 1).</p>
+        <pre>
+          <code>
+            var a = 'Curso',
+            b = 'JavaScript',
+            b2 = "JavaScript";
+            
+            var c = a + ' de ' + b; // 'Curso de JavaScript'
+
+            c.length; //19
+            a.toUpperCase(); // 'CURSO'
+            b.toLowerCase(); // 'javascript'
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Boolean</h3>
+        <p>Representan 2 valores: <i>true</i> y <i>false</i>.</p>
+        <pre>
+          <code>
+            var a = true,
+            b = false;
+          </code>
+        </pre>
+        <p>Valores <b>falsy</b>, son aquellos valores que son interpretados como <i>false</i> en una condicion.</p>
+        <pre>
+          <code>
+            false;
+            0;
+            '';
+            NaN;
+            null;
+            undefined;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>undefined - null</h3>
+        <p><b>NO</b> son lo mismo.</p>
+        <ul>
+          <li><b>undefined</b>: variable que no se le ha asignado valor</li>
+          <li><b>null</b>: no tiene valor o tiene valor nulo</li>
+        </ul>
+        <pre>
+          <code>
+            var a; //undefined
+
+            var b = null;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Operadores</h2>
+        <ul>
+          <li>Asignación</li>
+          <li>Aritméticos</li>
+          <li>Comparación</li>
+          <li>Lógicos</li>
+          <li>Unarios</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Asignación</h3>
+        <p>Asigna un valor al operador de la izquierda basado en el valor de la derecha.</p>
+        <pre>
+          <code>
+            var x = 1,
+            y = 2;
+
+            x += y; // x = x + y
+            x -= y; // x = x - y
+            x *= y; // x = x * y
+            x /= y; // x = x / y
+          </code>
+        </pre>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Conditional_(ternary)_operator" target="_blank">+info</a>
+      </section>
+
+      <section>
+        <h3>Aritméticos</h3>
+        <p>Resuelven operaciones aritmeticas y devuelven valores numericos.</p>
+        <ul>
+          <li>Suma: +</li>
+          <li>Resta: -</li>
+          <li>Multiplicacion: *</li>
+          <li>Division: /</li>
+          <li>Resto: %</li>
+          <li>Incremento: ++</li>
+          <li>Decremento: --</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Aritméticos</h3>
+        <pre>
+          <code>
+            var opt = 100 + 4 * 11; // 144
+            var opt2 = (100 + 4) * 11; // 1144
+
+            var opt3 = 10 - 7; // 3
+            var opt4 = 1 - 2 + 1; // 0
+
+            var opt5 = 12 / 3; // 4
+
+            var opt6 = 10 % 2; // 0
+            var opt7 = 11 % 2; // 1
+
+            var opt8++; // opt8 = opt8 + 1;
+            var opt9--; // opt9 = opt9 - 1;
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Comparación</h3>
+        <p>Comparan los valores y devuelven un valor logico basado en el resultado de la comparación.</p>
+        <ul>
+          <li>Igual: ==</li>
+          <li>No Igual: !=</li>
+          <li><b>Estrictamente Igual: ===</b></li>
+          <li><b>Estrictamente No Igual: !==</b></li>
+          <li>Mayor: ></li>
+          <li>Mayor o Igual: >=</li>
+          <li>Menor: <</li>
+          <li>Menor o Igual: <=</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Comparación</h3>
+        <pre>
+          <code>
+            var comp1 = 1 == 1; // true
+            var comp2 = 1 != 1; // false
+
+            var comp3 = 1 == '1'; // true
+            var comp4 = 1 === '1'; // false      
+            var comp5 = 1 !== '1'; // true
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Lógicos</h3>
+        <p>Proporcionan valores booleanos (no siempre) al evaluar un determinada condición.</p>
+        <ul>
+          <li>AND</li>
+          <li>OR</li>
+          <li>NOT</li>
+        </ul>
+        <pre>
+          <code>
+            var and1 = true && true; // false
+            var and2 = true && false; // false
+            var and3 = false && true; // false
+            var and4 = false && false; // false
+
+            var or1 = true || true; // true
+            var or2 = true || false; // true
+            var or3 = false || true; // true
+            var or4 = false || false; // false
+
+            var not1 = !true; // false
+            var not2 = !false; // true
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Unarios</h3>
+        <p>Operadores que utilizan un solo valor.</p>
+        <ul>
+          <li>typeof</li>
+          <li>delete</li>
+          <li>void</li>
+        </ul>
+        <pre>
+          <code>
+            typeof undefined; // 'undefined'
+            typeof null; // 'object'
+            typeof true; // 'boolean'
+            typeof false; // 'boolean'
+            typeof 'hi'; // 'string'
+            typeof 10 // 'number'
+            typeof 1.6 // 'number'
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>Estructuras Condicionales</h2>
+        <ul>
+          <li>if - else</li>
+          <li>switch</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>if - else</h3>
+        <p>
+          Se ejecuta el codigo definido dentro del bloque <i>if</i> si la condición es verdadera. Si la condición es falsa se ejecutara el <i>else</i> (en caso de que exista).
+        </p>
+      </section>
+
+      <section>
+        <h3>if - else</h3>
+        <pre>
+          <code>
+            if (true === true) {
+              //...
+            }
+
+            if (1 !== 1) {
+              //...
+            }
+            else {
+              //...
+            }
+
+            var str = 'hi';
+            if (str.length === 2) {
+              //...
+            }
+            else if (str.length === 3) {
+              //...
+            }
+            else {
+              //...
+            }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>truthy and falsy</h3>
+        <pre>
+          <code>
+            if (true) { } // true
+            if (1) { } // true
+            if ('some value') { } // true
+
+            if (0) { } // false
+            if (false) { } // false
+            if ('') { } // false
+            if (null) { } // false
+            if (undefined) { } // false
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>Condicional Ternario</h3>
+        <p><i>condicion ? valor1 : valor2;</i></p>
+        <pre>
+          <code>
+            var ageLimit = 18;
+
+            var status = ageLimit === 18 ? 'adult' : 'minor'; 
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h3>switch</h3>
+        <p>Hace comparación estricta de un valor y ejecuta el/los casos que tiene definido/s para ese valor.</p>
+        <pre>
+          <code>
+            var value = 4;
+
+            switch(value) {
+            case 1:
+            //...
+            break;
+
+            case 2:
+            case 4:
+            //...
+            break;
+
+            default: 
+            //...
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Estructuras Ciclicas</h2>
+      <ul>
+        <li>while</li>
+        <li>do-while</li>
+        <li>for</li>
+        <li>for in</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>while</h3>
+      <p>Se ejecuta mientras la condicion sea verdadera.</p>
+      <pre>
+        <code>
+          var count = 1;
+
+          while (count < 5) {
+            //...
+            count++;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>do-while</h3>
+      <p>Se ejecuta mientras la condicion sea verdadera, pero se garantiza al menos 1 ejecución.</p>
+      <pre>
+        <code>
+          var count = 6;
+
+          do {
+            //...
+          } while (count < 5)
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>for</h3>
+      <p>3 partes:</p>
+      <ul>
+        <li>Define el inicio del bucle: <i>var i = 0</i></li>
+        <li>Se establece la condición: <i>i < 10</i></li>
+        <li>Expresión que incrementa un valor: <i>i++</i></li>
+      </ul>
+      <pre>
+        <code>
+          for (var i = 0; i < 10; i++) {
+            //...
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>for in</h3>
+      <p>Permite recorrer objetos, arrays o strings a traves de sus propieades.</p>
+      <pre>
+        <code>
+          var str = 'hola',
+          str2 = '';
+
+          for (var s in str) {
+            str2 += s;
+          }
+
+          // str2 = 'hola'
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Funciones</h2>
+      <p>Una función es un conjunto de instrucciones que se agrupan para realizar una tarea concreta y que se pueden reutilizar fácilmente.</p>
+      <ul>
+        <li>Nombre la función (opcional)</li>
+        <li>Argumentos de la funcion (opcional)</li>
+        <li>Cuerpo de la funcion</li>
+      </ul>
+      <pre>
+        <code>
+          function add(x, y) {
+            if (x && y ) {
+              return x + y;
+            }
+
+            return 0;
+          }
+
+          add(1, 2); // 3
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Funciones como variables y argumentos</h3>
+      <p>Una función puede ser asignada a una variable, e incluso puede ser usada como parametro en otra función. Esto se puede hacer ya que las funciones son objetos.</p>
+      <pre>
+        <code>
+          var add = function(x, y) {
+            //..
+          };
+
+          var subtract = function (x, y) {
+            //...
+          };
+
+          function addAndSubtract(x, y, Z, add, subtract) {
+            var a = add(x, y);
+            var b = add(x, z);
+
+            return subtract(a, b);
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Funciones Autoinvocadas</h3>
+      <p>Permite ejecutar una funcion inmediatamente despues de ser definida.</p>
+      <pre>
+        <code>
+          (function load(){
+            //...
+          })();
+
+          (function add(x, y){
+            //...
+          })(1, 2);
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Hoisting</h3>
+      <p>Independientemente de donde esté la declaración de una variable, ésta es movida al inicio del ámbito al que pertenece (En tiempo de ejecucion).</p>
+      <pre>
+        <code>
+          function foo() {
+            alert(x);
+            var x = 10;
+          }
+
+          function foo() {
+            var = x;
+            alert(x);
+            x = 10;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Scope</h3>
+      <p>Es el ámbito y contexto de una variable.</p>
+      <p>El ámbito de una variable es el lugar dentro de un programa en el cual dicha variable vive y por lo tanto, donde puede ser usada.</p>
+      <p>Significa que una variable definida dentro de una función (con la palabra reservada var) va a poder ser usada dentro de esa función, pero no fuera de la misma.</p>
+      <p>Las variables declaradas fuera de una funcion (o sin la palabra var) son denomidas globales y seran accesibles en todos lados.</p>
+    </section>
+
+    <section>
+      <h3>Scope</h3>
+      <pre>
+        <code>
+          var value = 'global';
+
+          function showValue() {
+            alert(value); //global;
+          }
+        </code>
+      </pre>
+      <pre>
+        <code>
+          var value = 'global';
+
+          function showValue() {
+            var value = 'private';
+            alert(value); //private;
+          }
+        </code>
+      </pre>
+      <pre>
+        <code>
+          function showValue() {
+            alert(value); // Error;
+          }
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Closure</h3>
+      <p>Podes definir funciones dentro de otras funciones, pudiendo acceder desde las funciones mas internas al <b>scope</b> de las mas externas (no al reves).</p>
+      <pre>
+        <code>
+          function incrementAndAdd(x, y) {
+
+            function increment() {
+              x++;
+              y++;
+            }
+
+            return x + y;            
+          }
+
+          incrementAndAdd(5, 5); // 12
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Estructuras de Datos</h2>
+      <ul>
+        <li>Objetc</li>
+        <li>Array</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Object</h3>
+      <p>"La programación orientada a objetos es un paradigma de programación que utiliza la abstracción para crear modelos basados ​​en el mundo real."</p>
+      <p>TODO en JavaScript son objetos</p>
+      <!-- La programación orientada a objetos puede considerarse como el diseño de software a través de un conjunto de objetos que cooperan, a diferencia de un punto de vista tradicional en el que un programa puede considerarse como un conjunto de funciones, o simplemente como una lista de instrucciones para la computadora. En la programación orientada a objetos, cada objeto es capaz de recibir mensajes, procesar datos y enviar mensajes a otros objetos. Cada objeto puede verse como una pequeña máquina independiente con un papel o responsabilidad definida. -->
+      <!-- Clase
+        Define las características del Objeto.
+        Objeto
+        Una instancia de una Clase.
+        Propiedad
+        Una característica del Objeto, como el color.
+        Método
+        Una capacidad del Objeto, como caminar.
+        Constructor
+        Es un método llamado en el momento de la creación de instancias.
+        Herencia
+        Una Clase puede heredar características de otra Clase.
+        Encapsulamiento
+        Una Clase sólo define las características del Objeto, un Método sólo define cómo se ejecuta el Método.
+        Abstracción
+        La conjunción de herencia compleja, métodos, propiedades que un objeto debe ser capaz de simular en un modelo de la realidad.
+        Polimorfismo
+        Diferentes Clases podrían definir el mismo método o propiedad. -->
+    </section>
+
+    <section>
+      
+    </section>
+
+<!--       <section>
+        <h2>Sintaxis</h2>
+        <ul>
+          <li>No se tienen en cuenta los espacios en blanco ni los saltos de linea</li>
+          <li>Es Key Sensitive</li>
+          <li>No se define el tipo de dato de las variables</li>
+          <li>No es obligatorio el ';' al final de cada sentencia (Pero hagan de cuenta que si)</li>
+          <li>Comentarios en linea con // Comentario</li>
+          <li>Comentarios multilinea con /* Comentario */</li>
+          <li>Se pueden usar tanto comillas simples como comillas dobles</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>No se tienen en cuenta espacios en blanco ni saltos de linea.</h2>
+        <pre>
+          <code>
+            function sum(x,y){if(x&&y){return x+y;}return 0;}
+
+            function sumb(x, y) {
+              if (x && y) {
+                return x + y;
+              }
+
+              return 0;
+            }
+          </code>
+        </pre>
+      </section>
+
+      <section>
+        <h2>No se tienen en cuenta espacios en blanco ni saltos de linea.</h2>
+        <pre>
+          <code>
+            function sum(x,y){if(x&&y){return x+y;}return 0;}
+
+            function sumb(x, y) {
+              if (x && y) {
+                return x + y;
+              }
+
+              return 0;
+            }
+          </code>
+        </pre>
+      </section> -->
+
+      <section>
+        <h2>Bibliografia</h2>
+        <ul>
+          <li>"JavaScript: The good parts", by Douglas Crackford</li>
+          <li>"Effective JavaScript", by David Herman</li>
+          <li>"JavaScript: The Definitive Guide, 6th Edition", by David Flanagan</li>
+          <li><a href="http://eloquentjavascript.net/">"Eloquent JavaScript"</a>, by Marijn Haverbeke</li>
+          <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript">MSDN</a></li>
+          <li><a href="http://librosweb.es/libro/javascript">LibrosWeb</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41753965-1', 'keepe.rs');
+    ga('send', 'pageview');
+
+  </script>
+
+  <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+  </html>

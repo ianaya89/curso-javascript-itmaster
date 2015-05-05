@@ -92,7 +92,8 @@ body {
  *********************************************/
 
 .reveal a:not(.image) {
-  color: #fff;
+  color: #000;
+  font-weight: bold;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -103,8 +104,9 @@ body {
 
 .reveal a:not(.image):hover {
   border: none;
+  font-weight: bold;
   text-shadow: none;
-  color: white;
+  color: #000;
   text-decoration: underline;
 }
 
@@ -191,7 +193,8 @@ body {
  * SLIDE NUMBER
  *********************************************/
 .reveal .slide-number {
-  color: #3d3d3d; }
+  color: #3d3d3d; 
+}
 
 
 .reveal section img.logo {
@@ -222,4 +225,15 @@ body {
   margin-left: 40px;
 }
 
+.reveal pre {
+  box-shadow: none;
+}
 
+.reveal pre code {
+  border: 3px solid #fff;
+  border-radius: 8px;
+}
+
+.reveal table tr td {
+  border: 1px solid #fff;
+}
