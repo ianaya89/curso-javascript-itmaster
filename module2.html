@@ -40,7 +40,9 @@
           <li>Estructuras Condicionales</li>
           <li>Estructuras Cíclicas</li>
           <li>Funciones</li>
-          <li>Sinxtaxis</li>
+          <li>POO</li>
+          <li>Estructuras de Datos</li>
+          <li>Tips de Sinxtaxis</li>
         </ul>
         <br>
         <iframe src="//giphy.com/embed/MW1Xq9OvkwMso?html5=true" width="480" height="204" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -180,7 +182,13 @@
             x /= y; // x = x / y
           </code>
         </pre>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Conditional_(ternary)_operator" target="_blank">+info</a>
+        <ul>
+          <li>
+            <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math">Math()</a></li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Conditional_(ternary)_operator" target="_blank">Más Operadores</a>
+          </li>
+        </ul>
       </section>
 
       <section>
@@ -604,40 +612,213 @@
     </section>
 
     <section>
+      <h2>POO</h2>
+      <p>"La programación orientada a objetos es un paradigma de programación que utiliza la abstracción para crear modelos basados ​​en el mundo real."</p>
+      <p><b>TODO es un objeto</b></p>
+       <!-- La programación orientada a objetos puede considerarse como el diseño de software a través de un conjunto de objetos que cooperan, a diferencia de un punto de vista tradicional en el que un programa puede considerarse como un conjunto de funciones, o simplemente como una lista de instrucciones para la computadora. En la programación orientada a objetos, cada objeto es capaz de recibir mensajes, procesar datos y enviar mensajes a otros objetos. Cada objeto puede verse como una pequeña máquina independiente con un papel o responsabilidad definida. -->
+    </section>
+
+    <section>
+      <h3>Características de POO</h3>
+      <ul>
+        <li>Clase / Prototipo</li>
+        <li>Objeto</li>
+        <li>Propiedad</li>
+        <li>Metodo</li>
+        <li>Constructor</li>
+        <li style="color: red">Herencia</li>
+        <li style="color: red">Encapsulamiento</li>
+        <li style="color: red">Abstracción</li>
+        <li style="color: red">Polimorfismo</li>
+      </ul>
+      <!-- Prototipo: Define las características del Objeto.
+        Objeto: Una instancia de una Clase.
+        Propiedad: Una característica del Objeto, como el color.
+        Método: Una capacidad del Objeto, como caminar.
+        Constructor: Es un método llamado en el momento de la creación de instancias.
+        
+        Herencia: Una Clase puede heredar características de otra Clase.
+        Encapsulamiento: Una Clase sólo define las características del Objeto, un Método sólo define cómo se ejecuta el Método.
+        Abstracción: La conjunción de herencia compleja, métodos, propiedades que un objeto debe ser capaz de simular en un modelo de la realidad.
+        Polimorfismo: Diferentes Clases podrían definir el mismo método o propiedad. -->
+    </section>
+
+    <section>
       <h2>Estructuras de Datos</h2>
       <ul>
-        <li>Objetc</li>
+        <li>Object</li>
         <li>Array</li>
       </ul>
     </section>
 
     <section>
       <h3>Object</h3>
-      <p>"La programación orientada a objetos es un paradigma de programación que utiliza la abstracción para crear modelos basados ​​en el mundo real."</p>
-      <p>TODO en JavaScript son objetos</p>
-      <!-- La programación orientada a objetos puede considerarse como el diseño de software a través de un conjunto de objetos que cooperan, a diferencia de un punto de vista tradicional en el que un programa puede considerarse como un conjunto de funciones, o simplemente como una lista de instrucciones para la computadora. En la programación orientada a objetos, cada objeto es capaz de recibir mensajes, procesar datos y enviar mensajes a otros objetos. Cada objeto puede verse como una pequeña máquina independiente con un papel o responsabilidad definida. -->
-      <!-- Clase
-        Define las características del Objeto.
-        Objeto
-        Una instancia de una Clase.
-        Propiedad
-        Una característica del Objeto, como el color.
-        Método
-        Una capacidad del Objeto, como caminar.
-        Constructor
-        Es un método llamado en el momento de la creación de instancias.
-        Herencia
-        Una Clase puede heredar características de otra Clase.
-        Encapsulamiento
-        Una Clase sólo define las características del Objeto, un Método sólo define cómo se ejecuta el Método.
-        Abstracción
-        La conjunción de herencia compleja, métodos, propiedades que un objeto debe ser capaz de simular en un modelo de la realidad.
-        Polimorfismo
-        Diferentes Clases podrían definir el mismo método o propiedad. -->
+      <p>Tienen propiedades (caracteristicas) y metodos (comportamiento).</p>
+      <p>Son conjuntos de pares clave-valor.</p>
+      <p>Si no es primitivo, es un objeto.</p>
+      <pre>
+        <code>
+          // Instancia con constructor.
+          var obj = new Object() // NO Usar!
+
+          obj.prop1 = 'Hello World!';
+          obj.meth = function () {
+            //...
+          };
+        </code>
+      </pre>
+      <pre>
+        <code>
+          // Instancia Literal
+          var obj = {
+            prop1: 'Hello World!',
+            method: function() {
+             //..
+            }
+          };
+        </code>
+      </pre>
     </section>
 
     <section>
-      
+     <h3>Object</h3>
+      <pre>
+        <code>
+          // Instancia Literal
+          var obj = {};
+
+          obj.prop1 = 'Hello World!';
+          obj.meth = function () {
+            //...
+          };
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Object</h3>
+      <pre>
+        <code>
+          var Person = {};
+          
+          person.name = 'John';
+          person.id = 14;
+
+          person.sayHello = function() {
+            return 'Hello my name is: ' + this.name;
+          }
+          
+          alert(person.id);
+          alert(person['id']);
+
+          alert(person.sayHello());
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Object.prototype</h3>
+      <p>Todos los objetos de JavaScript tienen el objeto <i>prototype</i>.</p>
+      <p>Nos sirve para definir y luego extender comportamiento hacia otras clases (<b>herencia</b>).</p>
+    </section>
+
+    <section>
+     <h3>Object.create()</h3>
+     <p>No es compatible con IE8</p>
+      <pre>
+        <code>
+          var Person = {
+            name: '',
+            id: 0,
+            sayHello: function() {
+              return 'Hello my name is: ' + this.name;
+            }
+          }
+
+          var john = Object.create(Person);
+          john.name = 'john';
+          john.id = 14;
+          
+          var jane = Object.create(Person);
+          jane.name = 'jane';
+          jane.id = 15;
+
+          alert(john.sayHello());
+          alert(jane.sayHello());
+        </code>
+      </pre>
+    </section>
+
+    <section>
+     <h3>Usando Constructores</h3>
+      <pre>
+        <code>
+          var Person = function(name, id) {
+            this.name = name;
+            this.id = id;
+          }
+
+          Person.prototype.sayHello = function() {
+            return 'Hello my name is: ' + this.name;
+          }
+
+          var john = new Person('John', 14);
+          var jane = new Person('Jane', 15);
+
+          alert(john.sayHello());
+          alert(jane.sayHello());
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Herencia</h3>
+      <pre>
+        <code>
+          // Objeto Padre
+          var Person = function() {
+              this.canTalk = true;
+              this.greet = function() {
+                  if (this.canTalk) {
+                      console.log('Hi');
+                  }
+              };
+          };
+          
+          // Obejto Hijo 1
+          var Employee = function(name, title) {
+              this.name = name;
+              this.title = title;
+              this.greet = function() {
+                  if (this.canTalk) {
+                      console.log('I am ' + this.name);
+                  }
+              };
+          };
+  
+          // Aplicacion de Herencia
+          Employee.prototype = new Person();
+
+          // Objeto Hijo 2
+          var Customer = function(name) {
+              this.name = name;
+          };
+          
+          // Aplicacion de Herencia
+          Customer.prototype = new Person();
+          
+          // Instancias
+          var bob = new Employee('Bob','Constructor');
+          var joe = new Customer('Joe');
+          var rg = new Employee('Red Green','Manitas');
+          var mike = new Customer('Mike');
+    
+          bob.greet();
+          joe.greet();
+          rg.greet();
+          mike.greet();
+        </code>
+      </pre>
     </section>
 
 <!--       <section>
