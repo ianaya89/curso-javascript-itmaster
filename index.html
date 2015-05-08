@@ -25,18 +25,34 @@
     <hr>
     <h3>Índice</h3>
     
-    <ul>
+    <ul class="menu">
       <li><a href="intro.html">Introducción</a></li>
       <li><a href="module1.html">Módulo 1: Las Bases</a></li>
       <li><a href="module2.html">Módulo 2: El Lenguage</a></li>
-      <li><a href="#">Módulo 3: El Browser</a></li>
-      <li><a href="#">Módulo 4: jQuery</a></li>
-      <li><a href="#">Módulo 5: AJAX y REST</a></li>
-      <li><a href="#">Módulo 6: Debugging</a></li>
+      <li><a class="soon" href="#">Módulo 3: El Browser</a></li>
+      <li><a class="soon" href="#">Módulo 4: jQuery</a></li>
+      <li><a class="soon" href="#">Módulo 5: AJAX y REST</a></li>
+      <li><a class="soon" href="#">Módulo 6: Debugging</a></li>
     </ul>
     <hr>
     <h4><a href="http://www.itmaster.com.ar/" target="_blank">IT Master</a></h4>
     <h5>Ignacio Anaya - <a href="https://twitter.com/ianaya89" target="_blank">@ianaya89</a></h5>
     <a href="mailto:ignacio.anaya89@gmail.com">ignacio.anaya89@gmail.com</a>
   </div>
+
+  <div class="logos">
+    <img src="img/js.png" class="img-rounded">
+    <img src="img/jquery.png" class="img-rounded" style="background-color: #fff">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js">
+  </script>
+  <script>
+  $(function(){
+    $('.soon').click(function(){
+      alert('Este Módulo aun no ha sido publicado.');
+      return false;
+    });
+  });
+  </script>
 </body>

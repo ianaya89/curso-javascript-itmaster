@@ -253,3 +253,17 @@ body {
   color: #ccc;
   font-family: sans-serif;
 }
+
+.logos {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  float: right;
+  width: 430px;
+}
+
+.logos img{
+  width: 200px;
+  border: 2px solid #3d3d3d;
+  border-radius: 4px;
+}
