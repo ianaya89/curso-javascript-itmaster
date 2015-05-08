@@ -67,7 +67,7 @@
             */
           </code>
         </pre>
-        <small>Los nombres usados para variables pueden contener letras, numeros o simbolos, pero deben comenzar con <b>letras, '_' o '$'</b>.</small>
+        <small>Los nombres usados para variables pueden contener letras, numeros, '_' y '$', pero deben comenzar con <b>letras, '_' o '$'</b>.</small>
       </section>
 
       <section>
@@ -99,7 +99,7 @@
         </pre>
         <ul>
           <li>
-            <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math" target="_blank">Math()</a>
+            <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math" target="_blank">Math(): </a> <span>objecto que tiene propiedades y métodos para constantes y funciones matemáticas.</span>
           </li>
         </ul>
       </section>
@@ -122,7 +122,8 @@
           </code>
         </pre>
         <ul>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">MDN</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">MDN:</a>
+          <span> más información sobre metodos para manipular <i>String</i></span></li>
         </ul>
       </section>
 
@@ -135,7 +136,7 @@
             b = false;
           </code>
         </pre>
-        <p>Valores <b>falsy</b>, son aquellos valores que son interpretados como <i>false</i> en una condicion.</p>
+        <p>Valores <b>falsy</b>, son aquellos valores que son evaluados como <i>false</i> ante un flujo de control.</p>
         <pre>
           <code>
             false;
@@ -191,7 +192,8 @@
         </pre>
         <ul>
           <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Conditional_(ternary)_operator" target="_blank">Más Operadores</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Conditional_(ternary)_operator" target="_blank">MDN:</a>
+            <span> más información sobre operadores.</span>
           </li>
         </ul>
       </section>
@@ -256,6 +258,7 @@
             var comp3 = 1 == '1'; // true
             var comp4 = 1 === '1'; // false      
             var comp5 = 1 !== '1'; // true
+            var comp6 = 1 === 1; // true
           </code>
         </pre>
       </section>
@@ -270,7 +273,7 @@
         </ul>
         <pre>
           <code>
-            var and1 = true && true; // false
+            var and1 = true && true; // true
             var and2 = true && false; // false
             var and3 = false && true; // false
             var and4 = false && false; // false
@@ -318,8 +321,9 @@
       <section>
         <h3>if - else</h3>
         <p>
-          Se ejecuta el codigo definido dentro del bloque <i>if</i> si la condición es verdadera. Si la condición es falsa se ejecutara el <i>else</i> (en caso de que exista).
+          Se ejecuta el código definido dentro del bloque <i>if</i> si la condición es verdadera. Si la condición es falsa se ejecutará el código dentro del bloque <i>else</i>.
         </p>
+        <p>El flujo <i>else</i> puede no existir (es opcional).</p>
       </section>
 
       <section>
@@ -352,7 +356,7 @@
       </section>
 
       <section>
-        <h3>truthy and falsy</h3>
+        <h3>truthy & falsy</h3>
         <pre>
           <code>
             if (true) { } // true
@@ -427,11 +431,12 @@
           }
         </code>
       </pre>
+      <small>Tener en cuenta que siempre tenemos que tener condición de quiebre para evitar bucles infinitos.</small>
     </section>
 
     <section>
       <h3>do-while</h3>
-      <p>Se ejecuta mientras la condicion sea verdadera, pero se garantiza al menos 1 ejecución.</p>
+      <p>Se ejecuta mientras la condición sea verdadera, pero se garantiza al menos 1 ejecución.</p>
       <pre>
         <code>
           var count = 6;
@@ -506,18 +511,22 @@
       <pre>
         <code>
           var add = function(x, y) {
-            //..
+            if (x && y ) {
+              return x + y;
+            }
+
+            return 0;
           };
 
-          var subtract = function (x, y) {
-            //...
+          var increment = function (x) {
+            return x += 1;
           };
 
-          function addAndSubtract(x, y, Z, add, subtract) {
+          function addAndIncrement(x, y, add, increment) {
             var a = add(x, y);
-            var b = add(x, z);
+            var b = increment(a);
 
-            return subtract(a, b);
+            return b;
           }
         </code>
       </pre>
@@ -528,10 +537,12 @@
       <p>Permite ejecutar una funcion inmediatamente despues de ser definida.</p>
       <pre>
         <code>
+          // Función sin parámetros
           (function load(){
             //...
           })();
 
+          // Función con parámetros
           (function add(x, y){
             //...
           })(1, 2);
@@ -541,7 +552,7 @@
 
     <section>
       <h3>Hoisting</h3>
-      <p>Independientemente de donde esté la declaración de una variable, ésta es movida al inicio del ámbito al que pertenece (En tiempo de ejecucion).</p>
+      <p>Independientemente de donde esté la declaración de una variable, ésta es movida al inicio del ámbito al que pertenece (En tiempo de ejecución).</p>
       <pre>
         <code>
           function foo() {
@@ -563,7 +574,7 @@
       <p>Es el ámbito y contexto de una variable.</p>
       <p>El ámbito de una variable es el lugar dentro de un programa en el cual dicha variable vive y por lo tanto, donde puede ser usada.</p>
       <p>Significa que una variable definida dentro de una función (con la palabra reservada var) va a poder ser usada dentro de esa función, pero no fuera de la misma.</p>
-      <p>Las variables declaradas fuera de una funcion (o sin la palabra var) son denomidas globales y seran accesibles en todos lados.</p>
+      <p>Las variables declaradas fuera de una función (o sin la palabra var) son denomidas globales y seran accesibles en todos lados.</p>
     </section>
 
     <section>
@@ -583,44 +594,71 @@
 
           function showValue() {
             var value = 'private';
-            alert(value); //private;
+            alert(value); // private;
           }
         </code>
       </pre>
       <pre>
         <code>
           function showValue() {
-            alert(value); // Error;
+            var value = 'private';
+            alert(value); // private;
           }
+
+          alert(value); // ERROR
         </code>
       </pre>
     </section>
 
     <section>
       <h3>Closure</h3>
-      <p>Podes definir funciones dentro de otras funciones, pudiendo acceder desde las funciones mas internas al <b>scope</b> de las mas externas (no al reves).</p>
+      <p>En JavaScript podemos definir funciones dentro de otras funciones, pudiendo acceder desde las funciones mas internas al <b>scope</b> de las mas externas (no al reves).</p>
       <pre>
         <code>
-          function incrementAndAdd(x, y) {
+          function addAndIncrement(x, y) {
+            var z = x + y;
 
             function increment() {
-              x++;
-              y++;
+              z += 1;
             }
 
-            return x + y;            
+            increment();
+
+            return z;            
           }
 
-          incrementAndAdd(5, 5); // 12
+          addAndIncrement(5, 5); // 11
+          addAndIncrement(1, 1); // 3         
+        </code>
+      </pre>
+    </section>
+
+    <section>
+    <h3>Closure</h3>
+    <p>Es la capacidad que tienen las funciones de mantener instancias de variables locales vivas (y conservar su estado) despues de haberse ejecutado.</p>
+      <pre>
+        <code>
+          function wrapValue(value) {
+            var localVar = n;
+
+            return function() {
+              return localVar;
+            }
+          }
+
+          var wrap1 = wrapValue(1);
+          var wrap2 = wrapValue(2);
+          
+          wrap1(); // 1
+          wrap2(); // 2
         </code>
       </pre>
     </section>
 
     <section>
       <h2>POO</h2>
-      <p>"La programación orientada a objetos es un paradigma de programación que utiliza la abstracción para crear modelos basados ​​en el mundo real."</p>
-      <p><b>TODO es un objeto</b></p>
-       <!-- La programación orientada a objetos puede considerarse como el diseño de software a través de un conjunto de objetos que cooperan, a diferencia de un punto de vista tradicional en el que un programa puede considerarse como un conjunto de funciones, o simplemente como una lista de instrucciones para la computadora. En la programación orientada a objetos, cada objeto es capaz de recibir mensajes, procesar datos y enviar mensajes a otros objetos. Cada objeto puede verse como una pequeña máquina independiente con un papel o responsabilidad definida. -->
+      <p>La programación orientada a objetos es un paradigma de programación que utiliza la abstracción para crear modelos basados ​​en el mundo real.</p>
+      <p><b>TODO puede ser representado como objeto</b></p>
     </section>
 
     <section>
@@ -636,16 +674,6 @@
         <li>Abstracción</li>
         <li>Polimorfismo</li>
       </ul>
-      <!-- Prototipo: Define las características del Objeto.
-        Objeto: Una instancia de una Clase.
-        Propiedad: Una característica del Objeto, como el color.
-        Método: Una capacidad del Objeto, como caminar.
-        Constructor: Es un método llamado en el momento de la creación de instancias.
-        
-        Herencia: Una Clase puede heredar características de otra Clase.
-        Encapsulamiento:  Ocultamiento del estado, es decir, de los datos miembro de un objeto de manera que sólo se pueda cambiar mediante las operaciones definidas para ese objeto.
-        Abstracción: Además de distinguir entre los objetos provee límites conceptuales
-        Polimorfismo: Diferentes Clases podrían definir el mismo método o propiedad. -->
     </section>
 
     <section>
@@ -673,7 +701,8 @@
         <code>
           // No usar instanciación con new Object().
 
-          var obj = { // Notación literal.
+          // Notación literal.
+          var obj = { 
             prop1: 'Hello World!',
             method: function() {
               //..
@@ -789,7 +818,7 @@
     </section>
 
     <section>
-     <h3>Herencia Object.create()</h3>
+     <h3>Herencia con Object.create()</h3>
      <p>No es compatible con IE8</p>
       <pre>
         <code>
@@ -815,9 +844,9 @@
 
     <section>
       <h2>Array</h2>
-      <p>Estuctura de memora lineal donde los datos son accedidos mediante indices.</p>
-      <p>Son menos eficientes que los arrays de otros lenguages de programacion porque son objetos.</p>
-      <p>El primer indice de un <i>array</i> es 0.</p>
+      <p>Estructura de memoria lineal donde los datos son accesibles mediante indices.</p>
+      <p>Son menos eficientes que los arrays de otros lenguages de programacion porque en realidad son objetos.</p>
+      <p>Tanto la longitud del <i>array</i> como sus valores son mutables y el primer indice siempre es es 0.</p>
     </section>
 
     <section>
@@ -826,7 +855,8 @@
         <code>
           // No usar instanciación con new Array().
           
-          var empty = []; // Notación literal.
+          // Notación literal.
+          var empty = []; 
 
           var nums = [1, 2, 3, 4, 5];
           var chars = ['a', 'b', 'c', 'd'];
@@ -854,8 +884,10 @@
           nums.splice(2, 1); [1, 23, 78, 81];
         </code>
       </pre>
+      <small>Se puede representar una estructura de pila usando los métodos <i>push()</i> y <i>pop()</i></small>
+      <small>Se puede representar una estructura de cola usando los métodos <i>push()</i> y <i>shift()</i></small>
       <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN:</a><span> más información sobre <i>Array</i></span></li>
       </ul>
     </section>
 
@@ -889,9 +921,9 @@
       <ul>
         <li>No se tienen en cuenta los espacios en blanco ni los saltos de linea (Es importante el indentado)</li>
         <li>Es Case Sensitive</li>
-        <li>Usamos camelCase (salvo en los constructores)</li>
+        <li>Usamos <i>camelCase</i> (salvo en los constructores)</li>
         <li>No se define el tipo de dato de las variables</li>
-        <li>No es obligatorio el ';' al final de cada sentencia (Pero hagan de cuenta que si)</li>
+        <li>No es obligatorio el ';' al final de cada sentencia (Pero usenlo SIEMPRE!!!)</li>
         <li>Comentarios en linea con // Comentario</li>
         <li>Comentarios multilinea con /* Comentario */</li>
         <li>Se pueden usar tanto comillas simples como comillas dobles</li>
@@ -930,6 +962,21 @@
         </pre>
     </section>
 
+    <section>
+      <h3>Palabras Reservadas</h3>
+      <p>Ninguna de estas palabras puede ser utilizada para nomenclar variables ya que se encuentra reservadas para la sintaxis del lenguage.</p>
+      <pre>
+        <code>
+          break case catch class const continue debugger
+          default delete do else enum export extends false
+          finally for function if implements import in
+          instanceof interface let new null package private
+          protected public return static super switch this
+          throw true try typeof var void while with yield
+        </code>
+      </pre>
+    </section>
+
       <section>
         <h2>Bibliografía</h2>
         <ul>
@@ -943,6 +990,10 @@
       </section>
 
     </div>
+  </div>
+
+  <div class="index">
+    <a href="index.html">Index</a>
   </div>
 
   <script src="lib/js/head.min.js"></script>

@@ -241,3 +241,15 @@ body {
 .red {
   color: red !important;
 }
+
+.index {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 40px;
+}
+
+.index a {
+  color: red;
+  font-family: sans-serif;
+}
