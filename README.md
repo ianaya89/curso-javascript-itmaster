@@ -1,4 +1,5 @@
-# Curso de JavaScript y jQuery Báscio - IT Master
+# Curso de JavaScript y jQuery Báscio - [IT Master][6]
+[6]:http://www.itmaster.com.ar/
 
 Material y diapositivas del curso de JavaScript y jQuery básico de IT Master.
 [Aquí][2] encontraran mas información sobre el curso.
@@ -6,6 +7,12 @@ Material y diapositivas del curso de JavaScript y jQuery básico de IT Master.
 
 ### Version
 1.0
+
+### Tecnologías
+* [JavaScript][7]
+* [jQuery][8]
+[7]:https://developer.mozilla.org/es/docs/Web/JavaScript
+[8]:https://jquery.com/
 
 ### Autor
 Ignacio Anaya
