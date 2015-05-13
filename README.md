@@ -1,4 +1,4 @@
-# Curso de JavaScript y jQuery Báscio - [IT Master][6]
+# Curso de JavaScript y jQuery Básico - [IT Master][6]
 [6]:http://www.itmaster.com.ar/
 
 Material y diapositivas del curso de JavaScript y jQuery básico de IT Master.

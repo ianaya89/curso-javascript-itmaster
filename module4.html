@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Curso JavaScript y jQuery Intensivo</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/ionic.css">
+  <!-- <link rel="stylesheet" href="css/site.css"> -->
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h2>Módulo 4: jQuery</h2>
+        <ul>
+          <li>Qué es jQuery?</li>
+          <li>Implementación</li>
+          <li>Manejo de Elementos</li>
+          <li>Eventos</li>
+          <li>Efectos</li>
+          <li>Plugins</li>
+        </ul>
+      </section>
+
+     <section>
+        <h2>Qué es jQuery?</h2>
+        <p>Es una libreria creada por John Resig que nos facilita y simplicafica la manera de manipular e interactuar con el DOM</p>
+        <ul>
+          <li>Manipular HTML</li>
+          <li>Manejar Eventos</li>
+          <li>Efectos Visuales</li>
+          <li>Peticiones Asincrónicas</li>
+        </ul>
+     </section>
+
+     <section>
+        <h2>Implementación</h2>
+        <p>Se agregar referencia al archivo que contiene la libreria</p>
+        <pre>
+          <code>
+            Ejemplo
+          </code>
+        </pre>
+        <small>Se puede tener el archivo local o hacer uso de una CDN</small>
+     </section>
+
+      <section>
+        <h3>$</h3>
+        <p>jQuery provee la funcion global <i>$</i> o <i>jQuery</i> que nos permite encontrar elementos HTML usando selector de CSS.</p>
+        <pre>
+          <code>
+            Ejemplo
+          </code>
+        </pre>
+     </section>
+
+      <section>
+        <h3>$(document).ready</h3>
+        <p>Este evento nos permite saber cuando nuestro DOM esta listo. Se dispara una vez que todos los scripts, imagenes, y css hayan sido cargados y el renderizado de la página haya terminado</p>
+        <pre>
+          <code contenteditable>
+            $(document).ready(function(){
+              //...
+            });
+
+            $(function(){
+              //...
+            });
+          </code>
+        </pre>
+     </section>
+
+    </div>
+  </div>
+
+  <div class="index">
+    <a href="index.html">Index</a>
+  </div>
+
+ <script src="lib/js/head.min.js"></script>
+ <script src="js/reveal.min.js"></script>
+
+ <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+  </html>
