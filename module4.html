@@ -37,7 +37,8 @@
         <ul>
           <li>Qué es jQuery?</li>
           <li>Implementación</li>
-          <li>Manejo de Elementos</li>
+          <li>Fundamentos</li>
+          <li>Encontrando y Manejando Elementos</li>
           <li>Eventos</li>
           <li>Efectos</li>
           <li>Plugins</li>
@@ -48,11 +49,14 @@
         <h2>Qué es jQuery?</h2>
         <p>Es una libreria creada por John Resig que nos facilita y simplicafica la manera de manipular e interactuar con el DOM</p>
         <ul>
-          <li>Manipular HTML</li>
+          <li>Encontrar y manipular elementos HTML</li>
           <li>Manejar Eventos</li>
           <li>Efectos Visuales</li>
           <li>Peticiones Asincrónicas</li>
+          <li>Helpers</li>
         </ul>
+        <br>
+        <small>Write less, do more.</small>
      </section>
 
      <section>
@@ -60,25 +64,41 @@
         <p>Se agregar referencia al archivo que contiene la libreria</p>
         <pre>
           <code>
-            Ejemplo
+            &lt;script src="http://code.jquery.com/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
+            &lt;script src="js/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
           </code>
         </pre>
         <small>Se puede tener el archivo local o hacer uso de una CDN</small>
+        <small>Agregar referencia despues de nuestros CSS y antes de nuestros scripts</small>
      </section>
 
       <section>
+        <h2>Fundamentos</h2>
+        <p>Concepto de <i>Wrapper</i></p>
+        <p>Los elementos se <i>jquerizan</i>.</p>
+        <p>element !== $(element)</p>
+      </section>
+
+      <section>
         <h3>$</h3>
-        <p>jQuery provee la funcion global <i>$</i> o <i>jQuery</i> que nos permite encontrar elementos HTML usando selector de CSS.</p>
+        <p>jQuery provee la funcion global <i>$</i> o <i>jQuery</i> que nos permite encontrar elementos HTML usando selectores de CSS.</p>
         <pre>
           <code>
-            Ejemplo
+            $('p');
+            $('.item')
+            $('#container')
+
+            $('body p a')
+            $('.list li')
           </code>
         </pre>
+        <small>Es multifacetica: acepta selectores CSS, string en formato HTML y variables.</small>
+        <small>Uso similar a <i>document.querySellectorAll()</i></small>
      </section>
 
       <section>
         <h3>$(document).ready</h3>
-        <p>Este evento nos permite saber cuando nuestro DOM esta listo. Se dispara una vez que todos los scripts, imagenes, y css hayan sido cargados y el renderizado de la página haya terminado</p>
+        <p>Este evento nos permite saber cuando nuestro DOM esta listo para ser manejado. Se dispara una vez que todos los scripts y css hayan sido cargados y el renderizado de la página haya terminado.</p>        
         <pre>
           <code contenteditable>
             $(document).ready(function(){
@@ -90,7 +110,121 @@
             });
           </code>
         </pre>
+        <small>Anterior al <i>window.load</i></small>
+        <small>Podemos declarar N <i>$(document).ready</i>.</small>
      </section>
+
+     <section>
+       <h3>Encadenamiento</h3>
+       <p>Las funciones de jQuery retornan (casi siempre) el elemento que se obtiene en el selector.</p>
+       <pre>
+         <code>
+           $('#p1').css('color', 'red').slideUp(2000).slideDown(2000);
+
+           $('#a').hide().fadeIn(2000);
+         </code>
+       </pre>
+     </section>
+
+     <section>
+       <h3>No Conflict</h3>
+       <ul>
+         <li>Liberar el usa de la variable <i>$</i></li>
+         <li>Evitar futuros problemas</li>
+         <li>Customizar <i>name spaces</i></li>
+       </ul>
+       <pre>
+         <code>
+           var ITMaster = jQuery.noConflict();
+         </code>
+       </pre>
+     </section>
+
+     <section>
+       <h2>Encontrando Elementos</h2>
+        <a href="http://api.jquery.com/category/selectors/" target="_blank">jQuery Manipulation Methods</a>
+        <pre>
+         <code>
+            Ejemplos
+         </code>
+       </pre>
+     </section>
+
+     <section>
+       <h2>Manejando Elementos</h2>
+       <a href="http://api.jquery.com/category/manipulation/" target="_blank">jQuery Manipulation Methods</a>
+       <pre>
+         <code>
+          Ejemplos
+         </code>
+       </pre>
+     </section>
+
+     <section>
+       <h3>Colecciones</h3>
+       <ul>
+        <li><i>.each()</i>: es un helper para itererar sobre colecciones/arreglos.</p></li>
+        <li>.get(i), obtiene el elemento en la posicion i</li>
+        <li>.eq(i), obtiene el elemento en la posicion i <i>jquerizado</i></li>
+      </ul>
+       <pre>
+         <code contenteditable>
+           Ejemplo
+         </code>
+       </pre>
+     </section>
+
+     <section>
+      <h2>Eventos</h2>
+       <a href="http://api.jquery.com/category/events/" target="_blank">jQuery Events Methods</a>
+       <pre>
+         <code>
+           Ejemplos
+         </code>
+       </pre>
+     </section>
+
+    <section>
+      <h2>Efectos</h2>
+      <a href="http://api.jquery.com/category/effects/" target="_blank">jQuery Effects Methods</a>
+      <pre>
+        <code>
+          Ejemplos
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Plugins</h2>
+      <ul>
+        <li>Utilidad para ampliar las funcionalidades del framework</li>
+        <li>Resuelven problemas específicos y son reutilizables</li>
+        <li>No es mas que una funcion que se le extiende al objeto jQuery</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Creando un Plugin</h3>
+      <pre>
+        <code>
+          jQuery.fn.desaparece = function() {
+             this.each(function(){
+                elem = $(this);
+                elem.css('display', 'none');
+             });   
+             return this;
+          };
+
+          $('h1').desaparece();
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Implementando un Plugin</h3>
+      <a href="http://codepen.io/ianaya89/pen/vKndu" target="_blank">Ejemplo</a><br>
+      <a href="http://www.creativebloq.com/jquery/top-jquery-plugins-6133175" target="_blank">Otros Plugins</a>
+    </section>
 
     </div>
   </div>
