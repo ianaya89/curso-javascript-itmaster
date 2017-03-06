@@ -1,0 +1,58 @@
+body {
+  background: #6B9E65;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 , .reveal h6 {
+  text-transform: none;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.reveal a {
+  color: #333333;
+}
+
+.reveal section img.logo {
+  border: none;
+  width: 50%;
+  padding: 20px;
+}
+
+
+.reveal ul.no-bullets {
+  list-style-type: none;
+}
+
+.reveal ul.no-bullets li {
+  float: left;
+  margin-left: 20px;
+}
+
+.reveal aside.controls button.navigate-left.enabled {
+  border-right-color: #333333;
+}
+
+.reveal aside.controls button.navigate-right.enabled {
+  border-left-color: #333333;
+}
+
+.reveal aside.controls button.navigate-down.enabled {
+  border-top-color: #333333;
+}
+
+.reveal aside.controls button.navigate-up.enabled {
+  border-bottom-color: #333333;
+}
+
+.reveal pre {
+  box-shadow: none;
+}
+
+
+.gist-data {
+  max-height: 300px !important;
+}
+
+.gist {
+  margin-top: 20px !important;
+}

@@ -1,0 +1,6 @@
+{
+    "parser": "esprima",
+    "rules": {
+        "semi": "error"
+    }
+}
