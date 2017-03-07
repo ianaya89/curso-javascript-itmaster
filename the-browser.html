@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>El Navegador | Curso JavaScript | IT Master</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+
+  <link rel="icon" sizes="32x32" type="image/png" href="favicon.ico">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>El Navegador</h1>
+        <h1>🌎</h1>
+      </section>
+
+      <section>
+        <section data-background="img/internet.jpg">
+          <!-- <li>Proyecto militar principios de los 60</li>
+          <li>Red de redes, conexion entre computadoras</li>
+          <li>Protocolos, los idiomas de las computadoras (forma de comunicación)</li>
+          <li>Protocolos para mails, chats, archivos...</li> -->
+        </section>
+        <section>
+          <h1>TCP</h1>
+          <h2>💻 ↔️ 📦 ↔️ 🖲 ↔️ 📦 ↔️ 🖥</h2>
+          <!-- <li>Transmission Control Protocol</li>
+          <li>Armar paquetes de datos y distribuirlos al destino correcto.</li>
+          <li>Equipos que escuchan para 'hablar' con otros equipos usando puertos (servidores)</li>
+          <li>Equipos que llaman a los 'escuchadores' conectandose a estos puertos (clientes)</li> -->
+        </section>
+
+        <section data-background="img/tim.jpg">
+          <h1>W W W 🖱</h1>
+          <!-- <li>Creada por Tim Bernes-Lee</li>
+          <li>Conjunto de protocolos y formatos para navegar en sitios webs mediante browsers</li>
+          <li>Sistema de distribución de documentos de hipertexto conectados atraves de enlaces</li>
+          <li>Protocolo HTTP (80) o HTTPS (443)</li> -->
+        </section>
+
+        <section>
+          <h1>HTTP</h1>
+          <h2>💻 ↔️  🖲  ↔️ 🗂</h2>
+          <!-- <li>Orientado a transacciones, esquema de peticiones y respuestas</li>
+          <li>Cada respuesta obtenida es un recurso y cada recurso tiene una URL</li> -->
+        </section>
+
+        <section>
+          <h1>URL</h1>
+          <h2>
+            <i><span style="color: tomato">http://</span><span style="color: steelblue">mysite.com</span><span style="color: green">/index.html</span></i>
+          </h2>
+          <p><code>protocolo + dominio:puerto + path</code></p>
+        </section>
+
+        <section data-background="img/how.jpg">
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;"><code>window</code></h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h1><code>location</code></h1>
+          <pre>
+            <code>
+              location.href; // URL de la página
+              location.hostname; // Nombre del dominio
+              location.pathname; // Nombre del path
+              location.protocol; // Nombre del protocolo
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1><code>navigator</code></h1>
+          <pre>
+            <code contenteditable>
+              navigator.userAgent; // Informacion del browser.
+              navigator.platform; // Nombre del S.O.
+              navigator.language; // Devuelve el idioma y la region del browser
+              navigator.product; // Nombre del motor de JS
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1><code>history</code></h1>
+          <pre>
+            <code contenteditable>
+              history.go(10); // 10 pasos/paginas adelante
+              history.go(-10); // 10 pasos/paginas atras
+              history.back(); // Pagina anterior
+              history.foward(); // Pagina siguiente
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>alert</h1>
+          <pre>
+            <code contenteditable>
+              alert('Hello! I am an alert box!!');
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>prompt</h1>
+          <pre>
+            <code contenteditable>
+              const person = prompt('Please enter your name', 'Ignacio Anaya');
+              alert(person);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>confirm</h1>
+          <pre>
+            <code contenteditable>
+              const result = confirm('Press a button!');
+              alert(result);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1><code>setTimeout</code></h1>
+          <pre>
+            <code>
+              setTimeout(() => {
+                console.log('Hello);
+              }, 3000);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1><code>setInterval</code></h1>
+          <pre>
+            <code>
+              setInterval(() => {
+                console.log('Hello');
+              }, 3000);
+            </code>
+          </pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">document</h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+        </section>
+
+        <section data-background="">
+          <h1>DOM 🌲</h1>
+          <img src="img/html-tree.svg" alt="dom">
+          <!-- <li>Representación estructural del documento (árbol)</li>
+          <li>Conjunto de objetos que pueden ser manipulados usando JavaScript</li>
+          <li>Cada elemento HTML es un nodo</li>
+          <li>Permita modificar contenido y presentación visual</li>
+          <li>Forma de comunicar scripts con HTML</li> -->
+        </section>
+
+        <section>
+          <h1>Navegar Nodos</h1>
+          <pre>
+            <code>
+              document.parentNode
+              document.childNodes
+              document.firstChild
+              document.lastChild
+              document.previousSibling
+              document.nextSibling
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>Buscar Nodos</h1>
+          <pre>
+            <code>
+              document.getElementsByTagName('nombreTag');
+              document.getElementById('idTag');
+              document.getElementsByClassName('claseTag');
+
+              document.querySelectorAll('selector');
+              document.querySelector('selector');
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>Crear Nodos</h1>
+          <pre>
+            <code>
+              document.createTextNode;
+              document.createElement;
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>Cambiar Nodos</h1>
+          <pre>
+            <code>
+              document.removeChild;
+              document.addChild;
+              document.appendChild;
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>Atributos</h1>
+          <pre>
+            <code>
+              const a = document.getElementsByTagName('a')[0];
+
+              a.href = 'http://google.com';
+              a.getAttribute('href');
+
+              a.setAttribute('href', 'http://google.com');
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1><code>style</code></h1>
+          <pre>
+            <code>
+              node.style.color = 'red';
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1><code>className</code></h1>
+          <pre>
+            <code>
+              node.className = 'box';
+            </code>
+          </pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Eventos</h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h1>Tipos</h1>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">Lista</a>
+        </section>
+
+        <section>
+          <h2><code>addEventListener</code></h2>
+          <pre>
+            <code>
+              const a = document.getElementsByTagName('a')[0];
+
+              a.addEventListener('click', (e) => {
+                console.log(e);
+              });
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>removeEventListener</code></h2>
+          <pre>
+            <code>
+              const a = document.getElementsByTagName('a')[0];
+
+              a.removeEventListener('click');
+            </code>
+          </pre>
+        </section>
+      </section>
+
+      <!-- <section>
+        <h2>Formularios</h2>
+        <p>Podemos accederlos atraves del <i>array forms</i> del objecto <i>document</i>.</p>
+        <p>Cada <i>form</i> contiene un arreglo de <i>fields</i> (se pueden acceder por índice o clave).</p>
+
+        <pre>
+          <code contenteditable>
+            function validateForm() {
+                var email = document.forms['contact']['email'].value;
+                if (email) {
+                    alert('Email must be filled out');
+                    return false;
+                }
+            }
+          </code>
+        </pre>
+      </section> -->
+    </div>
+  </div>
+
+  <div class="index">
+    <a href="index.html">Index</a>
+  </div>
+
+ <script src="lib/js/head.min.js"></script>
+ <script src="js/reveal.min.js"></script>
+
+ <script>
+     // Full list of configuration options available here:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+       controls: true,
+       progress: true,
+       history: true,
+       center: true,
+       slideNumber: true,
+
+       theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+       transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+       // Optional libraries used to extend on reveal.js
+       dependencies: [
+       { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+       { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+       ]
+     });
+
+     Reveal.addEventListener( 'slidechanged', function( event ) {
+       var rightArrow = document.getElementsByClassName("navigate-right");
+       if(Reveal.isFirstSlide()){
+         for(var i = 0; i < rightArrow.length; i++) {
+           rightArrow[i].style.borderLeftColor = "#4D84E0";
+         }
+       }else{
+         for(var i = 0; i < rightArrow.length; i++) {
+           rightArrow[i].style.borderLeftColor = "#fff";
+         }
+       }
+     });
+
+   </script>
+
+  </body>
+  </html>

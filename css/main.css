@@ -67,6 +67,11 @@ body {
   bottom: -250px;
 }
 
+.left {
+  position: relative;
+  bottom: -250px;
+}
+
 .reveal section img {
   border: none;
   padding: 20px;
