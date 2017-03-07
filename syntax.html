@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  
+
   <title>Curso JavaScript y jQuery Intensivo</title>
 
   <meta name="description" content="">
@@ -13,9 +13,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="css/reveal.min.css">
-  <link rel="stylesheet" href="css/ionic.css">
-  <!-- <link rel="stylesheet" href="css/site.css"> -->
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
 
   <!-- For syntax highlighting -->
   <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -33,522 +33,320 @@
     <div class="slides">
 
       <section>
-        <h2>Módulo 2: El Lenguage</h2>
-        <ul>
-          <li>Variables</li>
-          <li>Operadores</li>
-          <li>Estructuras Condicionales</li>
-          <li>Estructuras Cíclicas</li>
-          <li>Funciones</li>
-          <li>POO</li>
-          <li>Estructuras de Datos</li>
-          <li>Tips de Sinxtaxis</li>
-        </ul>
-        <br>
-      </section>    
+        <section>
+          <h1 style="position: absolute; top: 0px;">Sintaxis</h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+        </section>
 
-      <section>
-        <h2>Variables</h2>
-        <p>Es un contenedor para un valor. Se declaran por medio de la palabra clave <i>var</i> pero no se indica el tipo de dato.</p>
-        <p>Una misma variable puede almacenar diferentes tipo de datos (no simultaneamente) durante su ciclo de vida.</p>
-        <pre>
-          <code>
-            var num = 15;
-            var chars = 'cat';
-            var char2 = 'dog;'
-            var $ = 'jQuery';
-            var _ = 'underscore';
+        <section>
+          <h1>Variables</h1>
+          <pre>
+            <code>
+              var num = 15;
+              const chars = 'cat';
+              let char2 = 'dog;'
+              const $ = 'jQuery';
+              let _ = 'underscore';
 
-            /* Ejemplos no permitidos
+              /* Ejemplos no permitidos
+              var -temp = 'some value';
+              var 2num = 2;
+              */
+            </code>
+          </pre>
 
-            var -temp = 'some value';
-            var 2num = 2;
+          <!-- <p>Es un contenedor para un valor. Se declaran por medio de la palabra clave <i>var</i> pero no se indica el tipo de dato.</p>
+          <p>Una misma variable puede almacenar diferentes tipo de datos (no simultaneamente) durante su ciclo de vida.</p>
+          <small>Los nombres usados para variables pueden contener letras, numeros, '_' y '$', pero deben comenzar con <b>letras, '_' o '$'</b>.</small> -->
+        </section>
 
-            */
-          </code>
-        </pre>
-        <small>Los nombres usados para variables pueden contener letras, numeros, '_' y '$', pero deben comenzar con <b>letras, '_' o '$'</b>.</small>
+        <section>
+          <h1>Datos Primitivos</h1>
+          <pre>
+            <code>
+              1; // Number
+              "hello"; // String
+              true // Boolean
+              null; // Null
+              undefined; // Undefined
+              Symbol(""); // Symbol
+            </code>
+          </pre>
+
+          <!--
+            Number => No se distinguen entre enteros y decimales
+            String => Cadenas, no hay char, concatenar.
+            Boolean => true or false (valores falsy)
+            null y undefined => No son lo mismo (sin valor vs no se le asigno valor)
+         -->
+        </section>
+
+        <section>
+          <h1>Operadores</h1>
+          <pre>
+            <code>
+              = += -= *= /= // Asignación
+              + - * / % ++ -- // Aritméticos
+              == ==== != !== > < >= <= // Comparación
+              && || ! // Lógicos
+              typeof delete // Unarios
+            </code>
+          </pre>
+          <!--
+            Asignacion => Asigna un valor al operador de la izquierda basado en el valor de la derecha.
+            Aritmeticos => Resuelven operaciones aritmeticas y devuelven valores numericos.
+            Comparacion => Comparan los valores y devuelven un valor logico basado en el resultado de la comparación.
+            Logicos => Evaluan y devuelven valores booleanos
+          -->
+        </section>
+
+        <section>
+          <h1>Esctructuras Condicionales</h1>
+        </section>
+
+        <section>
+          <h2><code>if - else if - else</code></h2>
+          <pre>
+            <code>
+              if (true === true) {
+                //...
+              }
+
+              if (1 !== 1) {
+                //...
+              }
+              else {
+                //...
+              }
+
+              const str = 'hi';
+              if (str.length === 2) {
+                //...
+              }
+              else if (str.length === 3) {
+                //...
+              }
+              else {
+                //...
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>switch</code></h2>
+          <pre>
+            <code>
+              const n = 1;
+              switch(n) {
+                case 1:
+                    // ...
+                    break;
+                case 2:
+                    // ...
+                    break;
+                default:
+                    // ...
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Ternary</h2>
+          <pre>
+            <code>
+              const ageLimit = 18;
+              const status = ageLimit === 18 ? 'adult' : 'minor';
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>truthy & falsy</code></h2>
+          <pre>
+            <code>
+              if (true) { } // true
+              if (1) { } // true
+              if ('some value') { } // true
+
+              if (0) { } // false
+              if (false) { } // false
+              if ('') { } // false
+              if (null) { } // false
+              if (undefined) { } // false
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>Loops</h1>
+        </section>
+
+        <section>
+          <h2><code>while</code></h2>
+          <pre>
+            <code>
+              let count = 1;
+
+              while (count < 5) {
+                //...
+
+                count++;
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>do-while</code></h2>
+          <pre>
+            <code>
+              let count = 6;
+
+              do {
+
+                //...
+
+              } while (count < 5)
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>for</code></h2>
+          <pre>
+            <code>
+              for (let i = 0; i < 10; i++) {
+
+                //...
+
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>for in</code></h2>
+          <pre>
+            <code>
+              const object = {};
+
+              for (let p in object) {
+                console.log(p);
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>for of</code></h2>
+          <pre>
+            <code>
+              const array = [];
+
+              for (let a of array) {
+                console.log(p);
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>Funciones</h1>
+        </section>
+
+        <section>
+          <h2><code>function</code></h2>
+          <pre>
+            <code>
+              function add(x, y) {
+                if (x && y) {
+                  return x + y;
+                }
+
+                return 0;
+              }
+
+              add(1, 2); // 3
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>() => {}</code></h2>
+          <pre>
+            <code>
+              const add = (x, y) => {
+                if (x && y) {
+                  return x + y;
+                }
+
+                return 0;
+              }
+
+              add(1, 2); // 3
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>First Class Citizen</h2>
+          <pre>
+            <code>
+              const add = function(x, y) {
+                if (x && y ) {
+                  return x + y;
+                }
+
+                return 0;
+              };
+
+              const increment = function (x) {
+                return x += 1;
+              };
+
+              function addAndIncrement(x, y, addFn, incrementFn) {
+                const a = addFn(x, y);
+                const b = incrementFn(a);
+
+                return b;
+              }
+
+              addAndIncrement(1, 2, add, increment); // 4
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Callbacks</h2>
+          <pre>
+            <code>
+              $.ajax(url, (res) => {
+                console.log(res);
+              })
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>IIFE</h2>
+          <pre>
+            <code>
+              // sin parámetros
+              (function load(){
+                //...
+              })();
+
+              // con parámetros
+              (function add(x, y){
+                //...
+              })(1, 2);
+            </code>
+          </pre>
+        </section>
+
       </section>
-
-      <section>
-        <h2>Tipos de Datos Primitivos</h2>
-        <ul>
-          <li>Number</li>
-          <li>String</li>
-          <li>Boolean</li>
-          <li>null</li>
-          <li>undefined</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Number</h3>
-        <p>No se distinguen entre enteros y decimales.</p>
-        <pre>
-          <code>
-            var x = 6,
-            var y = 3;
-            var z = -7;
-
-            var pi = 3.14;
-
-            var sums = x + y; // 9
-            var mult = x * y; // 18
-            var divs = x / y; // 2
-          </code>
-        </pre>
-        <ul>
-          <li>
-            <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math" target="_blank">Math(): </a> <span>objecto que tiene propiedades y métodos para constantes y funciones matemáticas.</span>
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>String</h3>
-        <p>Son cadenas de caracteres que representan texto.</p>
-        <p>No hay un tipo de dato char (es un string de longitud 1).</p>
-        <pre>
-          <code>
-            var a = 'Curso',
-            b = 'JavaScript',
-            b2 = "JavaScript";
-            
-            var c = a + ' de ' + b; // 'Curso de JavaScript'
-
-            c.length; //19
-            a.toUpperCase(); // 'CURSO'
-            b.toLowerCase(); // 'javascript'
-          </code>
-        </pre>
-        <ul>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank">MDN:</a>
-          <span> más información sobre metodos para manipular <i>String</i></span></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Boolean</h3>
-        <p>Representan 2 valores: <i>true</i> y <i>false</i>.</p>
-        <pre>
-          <code>
-            var a = true,
-            b = false;
-          </code>
-        </pre>
-        <p>Valores <b>falsy</b>, son aquellos valores que son evaluados como <i>false</i> ante un flujo de control.</p>
-        <pre>
-          <code>
-            false;
-            0;
-            '';
-            NaN;
-            null;
-            undefined;
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h3>undefined - null</h3>
-        <p><b>NO</b> son lo mismo.</p>
-        <ul>
-          <li><b>undefined</b>: variable que no se le ha asignado valor</li>
-          <li><b>null</b>: no tiene valor o tiene valor nulo</li>
-        </ul>
-        <pre>
-          <code>
-            var a; //undefined
-
-            var b = null;
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h2>Operadores</h2>
-        <ul>
-          <li>Asignación</li>
-          <li>Aritméticos</li>
-          <li>Comparación</li>
-          <li>Lógicos</li>
-          <li>Unarios</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Asignación</h3>
-        <p>Asigna un valor al operador de la izquierda basado en el valor de la derecha.</p>
-        <pre>
-          <code>
-            var x = 1,
-            y = 2;
-
-            x += y; // x = x + y
-            x -= y; // x = x - y
-            x *= y; // x = x * y
-            x /= y; // x = x / y
-          </code>
-        </pre>
-        <ul>
-          <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Conditional_(ternary)_operator" target="_blank">MDN:</a>
-            <span> más información sobre operadores.</span>
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Aritméticos</h3>
-        <p>Resuelven operaciones aritmeticas y devuelven valores numericos.</p>
-        <ul>
-          <li>Suma: +</li>
-          <li>Resta: -</li>
-          <li>Multiplicacion: *</li>
-          <li>Division: /</li>
-          <li>Resto: %</li>
-          <li>Incremento: ++</li>
-          <li>Decremento: --</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Aritméticos</h3>
-        <pre>
-          <code>
-            var opt = 100 + 4 * 11; // 144
-            var opt2 = (100 + 4) * 11; // 1144
-
-            var opt3 = 10 - 7; // 3
-            var opt4 = 1 - 2 + 1; // 0
-
-            var opt5 = 12 / 3; // 4
-
-            var opt6 = 10 % 2; // 0
-            var opt7 = 11 % 2; // 1
-
-            var opt8++; // opt8 = opt8 + 1;
-            var opt9--; // opt9 = opt9 - 1;
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h3>Comparación</h3>
-        <p>Comparan los valores y devuelven un valor logico basado en el resultado de la comparación.</p>
-        <ul>
-          <li>Igual: ==</li>
-          <li>No Igual: !=</li>
-          <li class="red"><b>Estrictamente Igual: ===</b></li>
-          <li class="red"><b>Estrictamente No Igual: !==</b></li>
-          <li>Mayor: ></li>
-          <li>Mayor o Igual: >=</li>
-          <li>Menor: <</li>
-          <li>Menor o Igual: <=</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Comparación</h3>
-        <pre>
-          <code>
-            var comp1 = 1 == 1; // true
-            var comp2 = 1 != 1; // false
-
-            var comp3 = 1 == '1'; // true
-            var comp4 = 1 === '1'; // false      
-            var comp5 = 1 !== '1'; // true
-            var comp6 = 1 === 1; // true
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h3>Lógicos</h3>
-        <p>Proporcionan valores booleanos (no siempre) al evaluar un determinada condición.</p>
-        <ul>
-          <li>AND</li>
-          <li>OR</li>
-          <li>NOT</li>
-        </ul>
-        <pre>
-          <code>
-            var and1 = true && true; // true
-            var and2 = true && false; // false
-            var and3 = false && true; // false
-            var and4 = false && false; // false
-
-            var or1 = true || true; // true
-            var or2 = true || false; // true
-            var or3 = false || true; // true
-            var or4 = false || false; // false
-
-            var not1 = !true; // false
-            var not2 = !false; // true
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h3>Unarios</h3>
-        <p>Operadores que utilizan un solo valor.</p>
-        <ul>
-          <li class="red">typeof</li>
-          <li>delete</li>
-          <li>void</li>
-        </ul>
-        <pre>
-          <code>
-            typeof undefined; // 'undefined'
-            typeof null; // 'object'
-            typeof true; // 'boolean'
-            typeof false; // 'boolean'
-            typeof 'hi'; // 'string'
-            typeof 10 // 'number'
-            typeof 1.6 // 'number'
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h2>Estructuras Condicionales</h2>
-        <ul>
-          <li>if - else</li>
-          <li>switch</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>if - else</h3>
-        <p>
-          Se ejecuta el código definido dentro del bloque <i>if</i> si la condición es verdadera. Si la condición es falsa se ejecutará el código dentro del bloque <i>else</i>.
-        </p>
-        <p>El flujo <i>else</i> puede no existir (es opcional).</p>
-      </section>
-
-      <section>
-        <h3>if - else</h3>
-        <pre>
-          <code>
-            if (true === true) {
-              //...
-            }
-
-            if (1 !== 1) {
-              //...
-            }
-            else {
-              //...
-            }
-
-            var str = 'hi';
-            if (str.length === 2) {
-              //...
-            }
-            else if (str.length === 3) {
-              //...
-            }
-            else {
-              //...
-            }
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h3>truthy & falsy</h3>
-        <pre>
-          <code>
-            if (true) { } // true
-            if (1) { } // true
-            if ('some value') { } // true
-
-            if (0) { } // false
-            if (false) { } // false
-            if ('') { } // false
-            if (null) { } // false
-            if (undefined) { } // false
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h3>Condicional Ternario</h3>
-        <p><i>condicion ? valor1 : valor2;</i></p>
-        <pre>
-          <code>
-            var ageLimit = 18;
-
-            var status = ageLimit === 18 ? 'adult' : 'minor'; 
-          </code>
-        </pre>
-      </section>
-
-      <section>
-        <h3>switch</h3>
-        <p>Hace comparación estricta de un valor y ejecuta el/los casos que tiene definido/s para ese valor.</p>
-        <pre>
-          <code>
-            var value = 4;
-
-            switch(value) {
-              case 1:
-              //...
-              break;
-
-              case 2:
-              case 4:
-              //...
-              break;
-
-              default: 
-              //...
-            }
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h2>Estructuras Ciclicas</h2>
-      <ul>
-        <li>while</li>
-        <li>do-while</li>
-        <li>for</li>
-        <li>for in</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>while</h3>
-      <p>Se ejecuta mientras la condicion sea verdadera.</p>
-      <pre>
-        <code>
-          var count = 1;
-
-          while (count < 5) {
-            //...
-            count++;
-          }
-        </code>
-      </pre>
-      <small>Tener en cuenta que siempre tenemos que tener condición de quiebre para evitar bucles infinitos.</small>
-    </section>
-
-    <section>
-      <h3>do-while</h3>
-      <p>Se ejecuta mientras la condición sea verdadera, pero se garantiza al menos 1 ejecución.</p>
-      <pre>
-        <code>
-          var count = 6;
-
-          do {
-            //...
-          } while (count < 5)
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>for</h3>
-      <p>3 partes:</p>
-      <ul>
-        <li>Define el inicio del bucle: <i>var i = 0</i></li>
-        <li>Se establece la condición: <i>i < 10</i></li>
-        <li>Expresión que incrementa un valor: <i>i++</i></li>
-      </ul>
-      <pre>
-        <code>
-          for (var i = 0; i < 10; i++) {
-            //...
-          }
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>for in</h3>
-      <p>Permite recorrer objetos, arrays o strings a traves de sus propieades.</p>
-      <pre>
-        <code>
-          var str = 'hola',
-          str2 = '';
-
-          for (var s in str) {
-            str2 += s;
-          }
-
-          // str2 = 'hola'
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h2>Funciones</h2>
-      <p>Una función es un conjunto de instrucciones que se agrupan para realizar una tarea concreta y que se pueden reutilizar fácilmente.</p>
-      <ul>
-        <li>Nombre la función (opcional)</li>
-        <li>Argumentos de la funcion (opcional)</li>
-        <li>Cuerpo de la funcion</li>
-      </ul>
-      <pre>
-        <code>
-          function add(x, y) {
-            if (x && y ) {
-              return x + y;
-            }
-
-            return 0;
-          }
-
-          add(1, 2); // 3
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Funciones como variables y argumentos</h3>
-      <p>Una función puede ser asignada a una variable, e incluso puede ser usada como parametro en otra función. Esto se puede hacer ya que las funciones son objetos.</p>
-      <pre>
-        <code>
-          var add = function(x, y) {
-            if (x && y ) {
-              return x + y;
-            }
-
-            return 0;
-          };
-
-          var increment = function (x) {
-            return x += 1;
-          };
-
-          function addAndIncrement(x, y, add, increment) {
-            var a = add(x, y);
-            var b = increment(a);
-
-            return b;
-          }
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Funciones Autoinvocadas</h3>
-      <p>Permite ejecutar una funcion inmediatamente despues de ser definida.</p>
-      <pre>
-        <code>
-          // Función sin parámetros
-          (function load(){
-            //...
-          })();
-
-          // Función con parámetros
-          (function add(x, y){
-            //...
-          })(1, 2);
-        </code>
-      </pre>
-    </section>
 
     <section>
       <h3>Hoisting</h3>
@@ -587,7 +385,7 @@
           function showValue() {
             alert(value); //global;
           }
-          
+
           // Ejemplo 2
           var value = 'global';
 
@@ -595,7 +393,7 @@
             var value = 'private';
             alert(value); // private;
           }
-          
+
           // Ejemplo 3
           function showValue() {
             var value = 'private';
@@ -621,11 +419,11 @@
 
             increment();
 
-            return z;            
+            return z;
           }
 
           addAndIncrement(5, 5); // 11
-          addAndIncrement(1, 1); // 3         
+          addAndIncrement(1, 1); // 3
         </code>
       </pre>
     </section>
@@ -645,7 +443,7 @@
 
           var wrap1 = wrapValue(1);
           var wrap2 = wrapValue(2);
-          
+
           wrap1(); // 1
           wrap2(); // 2
         </code>
@@ -699,7 +497,7 @@
           // No usar instanciación con new Object().
 
           // Notación literal.
-          var obj = { 
+          var obj = {
             prop1: 'Hello World!',
             method: function() {
               //..
@@ -716,14 +514,14 @@
       <pre>
         <code>
           var Person = {};
-          
+
           person.name = 'John';
           person.id = 14;
 
           person.sayHello = function() {
             return 'Hello my name is: ' + this.name;
           }
-          
+
           alert(person.id);
           alert(person['id']);
 
@@ -775,7 +573,7 @@
                 console.log('Hi');
             }
           };
-          
+
           // Objeto Hijo 1
           var Employee = function(name, title) {
               this.name = name;
@@ -791,21 +589,21 @@
                 console.log('I am ' + this.name);
             }
           };
-  
+
           // Objeto Hijo 2
           var Customer = function(name) {
               this.name = name;
           };
-          
+
           // Aplicacion de Herencia
           Customer.prototype = new Person();
-          
+
           // Instancias
           var bob = new Employee('Bob','Constructor');
           var joe = new Customer('Joe');
           var rg = new Employee('John','Developer');
           var mike = new Customer('Mike');
-    
+
           bob.greet();
           joe.greet();
           rg.greet();
@@ -828,10 +626,10 @@
                 }
               }
           };
-          
+
           // Objeto Hijo
           var employee = Object.create(person);
-        
+
           employee.name = 'Bob';
           employee.title = 'Constructor';
           employee.greet();
@@ -851,9 +649,9 @@
       <pre>
         <code>
           // No usar instanciación con new Array().
-          
+
           // Notación literal.
-          var empty = []; 
+          var empty = [];
 
           var nums = [1, 2, 3, 4, 5];
           var chars = ['a', 'b', 'c', 'd'];
@@ -902,7 +700,7 @@
           for (var p in person) {
             alert(person[p]);
           }
-  
+
           // Array
           var years = [2010, 2011, 2012, 2013, 2014, 2015];
 
