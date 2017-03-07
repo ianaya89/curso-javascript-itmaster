@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Curso JavaScript y jQuery Intensivo</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Historia</h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+        </section>
+
+        <section data-background="img/menem.jpg">
+          <h1 class="white">90's</h1>
+          <h2 class="white">Problemas en la Web 🤘</h2>
+        </section>
+
+        <section data-background="img/form.png">
+          <audio src="img/dsl.mp3" controls></audio>
+        </section>
+
+        <section>
+          <h1>WWW</h1>
+          <ul>
+            <li>Mucho Contenido</li>
+            <li>Formularios Complejos</li>
+            <li>Conexiones Lentas</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>
+            1995 - <a href="#">Brendan Eich</a> crea JavaScript 👏
+          </h1>
+          <img src="img/brendan.jpg" alt="brendan" style="border-radius: 50%">
+        </section>
+
+        <section data-background="img/dance.gif">
+          <h1 class="white">Solucionado 🥇</h1>
+        </section>
+
+        <section data-background="img/darth.jpg">
+          <h1 class="bottom white">Microsoft 😈</h1>
+        </section>
+
+        <section>
+          <h1>ECMA</h1>
+          <p>1997 - ECMAScript 1.0 🚀</p>
+        </section>
+
+        <section>
+          <h1>TC39</h1>
+          <p>2008 - Mantener el lenguaje 📖🖊</p>
+        </section>
+
+        <section>
+          <h1>🎉</h1>
+          <ul>
+            <li>ES2015</li>
+            <li>ES2016</li>
+            <li>ES2017</li>
+            <li>ESNext</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section data-background="img/what.gif">
+          <h1 class="bottom white">Que es JavaScript?</h1>
+        </section>
+
+        <section>
+          <h2>Lenguage de Programción:</h2>
+          <ul>
+            <li>Script</li>
+            <li>Interpretado</li>
+            <li>Multiplataforma</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Client Side JavaScript</h2>
+          <!-- <p>Se ejecuta e intrepreta en el browser.</p>
+          <p>Nos proporciona objetos para controlar e interactuar con el browser y con el <b>DOM.</b></p>
+          <p>Nos permite agregar dinamismo e interactuar con nuestros sitios o aplicaciones web.</p> -->
+          <img src="img/browsers.png" alt="">
+        </section>
+      </section>
+
+
+      <section>
+        <section data-background="img/no.gif">
+          <h1 class="white">Qué NO es JavaScript?</h1>
+        </section>
+
+        <section>
+          <img src="img/ham.png" alt="">
+        </section>
+      </section>
+
+      <section>
+        <h1>Características</h1>
+        <ul>
+          <li>Liviano</li>
+          <li>Interpretado</li>
+          <li>POO</li>
+          <li>PF</li>
+          <li>Multiplataforma</li>
+          <li>Tipado Dinámico</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Casos de Uso</h1>
+        <ul>
+         <li>DOM</li>
+         <li>Eventos</li>
+         <li>AJAX</li>
+         <li>Almacenamiento</li>
+         <li>Animaciones</li>
+         <li>Validaciones</li>
+         <li>Dinamismo</li>
+         <li>SPA</li>
+         <li>API's</li>
+       </ul>
+     </section>
+
+      <section>
+        <h1>Restricciones</h1>
+        <ul>
+          <li>Servidor</li>
+          <li>BDD</li>
+          <li>Browser</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="index">
+    <a href="index.html">Index</a>
+  </div>
+
+ <script src="lib/js/head.min.js"></script>
+ <script src="js/reveal.min.js"></script>
+
+ <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+  </html>
