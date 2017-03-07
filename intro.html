@@ -1,203 +1,111 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html>
+  <head>
   <meta charset="utf-8">
-
-  <title>Curso JavaScript y jQuery Intensivo</title>
-
-  <meta name="description" content="">
-  <meta name="author" content="https://twitter.com/ianaya89">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/reveal.min.css">
-  <link rel="stylesheet" href="css/ionic.css">
+  <title>Intro | Curso JavaScript | IT Master</title>
 
+  <link rel="icon" sizes="32x32" type="image/png" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+
+  <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="lib/css/zenburn.css">
 
+  <!-- Printing and PDF exports -->
   <script>
-    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
-</head>
-
-<body>
-
+  </head>
+  <body>
   <div class="reveal">
     <div class="slides">
+    <section>
+      <h1>JavaScript</h1>
+      <img src="img/js2.png" alt="node.js" style="width: 30%">
+      <h3>IT Master</h3>
+      <h4> Ignacio Anaya - <a href="https://twitter.com/ianaya89">@ianaya89</a></h4>
+    </section>
 
-      <section class="init">
-        <h2>JavaScript y jQuery Intensivo</h2>
-        <img src="img/js.png" class="img-rounded">
-        <img src="img/jquery.png" class="img-rounded" style="background-color: #fff">
-        <h2>IT Master</h2>
-        <h3>Ignacio Anaya - @ianaya89</h3>
-        <a href="mailto:ignacio.anaya89@gmail.com">ignacio.anaya89@gmail.com</a>
-      </section>
+    <section>
+      <h1>Quién soy?</h1>
+      <h4>Ignacio Anaya - <a href="https://twitter.com/ianaya89">@ianaya89</a></h4>
+      <ul>
+        <li>Full Stack Architect en E-xact Transactions</li>
+        <li>Programming Mentor en Thinkful</li>
+      </ul>
+      <ul class="no-bullets">
+        <li><a href="https://twitter/ianaya89"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="https://github.com/ianaya89"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://ar.linkedin.com/in/ianaya89"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="http://stackoverflow.com/users/4195328/ianaya89"><i class="fa fa-stack-overflow"></i></a></li>
+      </ul>
+    </section>
 
+    <section>
+      <h1>Herramientas</h1>
+      <ul>
+        <li><a href="https://nodejs.org/en/">Node.js</a></li>
+        <li><a href="https://git-scm.com/">Git</a></li>
+        <li>Bash</li>
+        <li>Editor de Texto</li>
+        <li><a href="https://codepen.io">Codepen</a></li>
+      </ul>
+    </section>
+
+    <section>
       <section>
-        <h2>Quién soy?</h2>
-        <h3>Ignacio Anaya - @ianaya89</h3>
-        <h5>Software Architect - Web and Mobile Developments</h5>
-        <a href="mailto:ignacio.anaya89@gmail.com">ignacio.anaya89@gmail.com</a>
-        <br>
+        <h1>Agenda</h1>
         <ul>
-          <li><a href="https://twitter.com/ianaya89" target="_blank">Twitter</a></li>
-          <li><a href="https://github.com/ianaya89" target="_blank">GitHub</a></li>
-          <li><a href="http://codepen.io/ianaya89/" target="_blank">CodePen</a></li>
-          <li><a href="http://stackoverflow.com/users/4195328/ianaya89" target="_blank">Stack Overflow</a></li>
-          <li><a href="https://ar.linkedin.com/in/ianaya89" target="_blank">LinkedIn</a></li>
+          <li>2 clases de repaso</li>
+          <li>8 clases avanzadas (teoria + practica)</li>
+          <li><a href="http://it-master-ar.github.io/curso-javascript">Slides</a> y ejercicios en GitHub</li>
         </ul>
       </section>
+    </section>
 
-      <section>
-        <h2>Proyectos y Empresas</h2>
-        <img src="img/companies.png" alt="companies" style="max-width: 90%">
-      </section>
+    <section>
+      <h1>Recursos</h1>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">Documentación</a></li>
+        <li><a href="http://eloquentjavascript.net/" target="_blank">Eloquent JavaScript</a></li>
+        <li><a href="https://jsparagatos.com/" target="_blank">JavaScript para Gatos</a></li>
+        <li><a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">YDKJS</a></li>
+        <li><a href="https://egghead.io/" target="_blank">Egg Head</a></li>
+        <li><a href="https://www.codeschool.com/" target="_blank">Code School</a></li>
+      </ul>
+    </section>
 
-      <section>
-        <h2>Tecnologias</h2>
-        <img src="img/technologies.png" alt="companies" style="max-width: 90%">
-      </section>
-
-      <section>
-        <h2>Herramientas</h2>
-        <ul>
-          <li><a class="red" href="http://www.sublimetext.com/3" target="_blank">Sublime Text</a>, <a href="Notepad++" target="_blank">Notepad++</a>, <a href="http://brackets.io/" target="_blank">Brackets</a>, <a href="https://atom.io/" target="_blank">Atom</a> o <a href="https://code.visualstudio.com/Docs" target="_blank">Visual Studio</a></li>
-          <li>Browsers: <span class="red">Chrome</span>, FireFox, IE, Safari y Opera</li>
-          <li>Browser Developer Tools</li>
-          <li><a href="http://codepen.io/" target="_blank" class="red">CodePen</a>, <a href="http://jsbin.com/" target="_blank">JSBin</a> o <a href="https://jsfiddle.net/" target="_blank">JSFiddle</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Agenda</h2>
-        <ul>
-          <li>3 Clases Teoricas y 3 Clases Practicas</li>
-          <li>Martes y Jueves 19 a 22 hs. - Break de 15 m.</li>
-          <li>Material y Diapositivas en <a href="https://github.com/ianaya89/curso-javascript-itmaster" target="_blank">GitHub</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Temas</h2>
-        <ul>
-          <li>Introducción</li>
-          <li>
-            Modulo 1: Las Bases 
-<!--             <ul>
-              <li>Historia</li>
-              <li>Que es JavaScript?</li>
-              <li>Que NO es JavaScript?</li>
-              <li>Caracteristicas</li>
-              <li>Para que sirve JavaScript?</li>
-              <li>Para que NO sirve JavaScript?</li>
-            </ul> -->
-          </li>
-          <li>
-            Módulo 2: El Lenguage
-<!--             <ul>
-              <li>Variables</li>
-              <li>Operadores</li>
-              <li>Estructuras Condicionales</li>
-              <li>Estructuras Cíclicas</li>
-              <li>Funciones</li>
-              <li>Estructuras de Datos</li>
-              <li>Tips de Sinxtaxis</li>
-            </ul> -->
-          </li>
-          <li>
-            Módulo 3: El Browser
-          </li>
-          <li>
-            Módulo 4: jQuery
-          </li>
-          <li>
-            Módulo 5: AJAX y REST
-          </li>
-          <li>
-            Módulo 6: Debugging
-          </li>
-        </ul>
-        <!-- <ul>
-          <li>Dónde y cómo se usa y ejecuta JavaScript.</li> I
-          <li>Creación de sitios dinámicos desde el cliente usando JavaScript.</li> I
-          <li>Sintaxis y capacidades. Diferencias con otros lenguajes. </li> I
-          <li>Definición de variables y funciones.</li> II
-          <li>Instrucciones de condición if-switch, bucle while-for.</li> II
-          <li>Manejo de objetos en JavaScript.</li> II
-          <li>Limitaciones y usos del lenguaje.</li> I
-          <li>Diálogos nativos.</li> III
-          <li>Validación de formularios.</li> III
-          <li>Manejo de eventos.</li> III
-          <li>La librería jQuery, qué es y cuándo usarla. Usos y utilidades.</li> IV
-          <li>Funciones de manipulación de HTML y CSS.</li> IV
-          <li>Funciones de efectos.</li> IV
-          <li>El formato JSON y manipulación de datos.</li> V
-          <li>Peticiones AJAX: ejemplos, introducción y código.</li> V
-          <li>Enviando y recibiendo datos de servicios REST.</li> V
-          <li>Trabajando con plugins de jQuery.</li> IV
-          <li>Depuración de JavaScript y herramientas disponibles.</li> VI
-        </ul> -->
-      </section>
-
-<!--       <section>
-        <h2>Bibliografía Recomendada</h2>
-        <ul>
-        </ul>
-      </section> -->
-
-      <section>
-        <h2>y Ustedes?</h2>
-        <iframe src="//giphy.com/embed/lu8sliejbdeTe?html5=true" width="480" height="242" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-      </section>
+    <section data-background="img/hi.gif">
+    </section>
 
     </div>
   </div>
 
-    <div class="index">
-    <a href="index.html">Index</a>
-  </div>
-
   <script src="lib/js/head.min.js"></script>
-  <script src="js/reveal.min.js"></script>
+  <script src="js/reveal.js"></script>
 
   <script>
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        slideNumber: true,
+    Reveal.initialize({
+    history: true,
 
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
-
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-        ]
-      });
-
-      Reveal.addEventListener('slidechanged', function(event) {
-        var rightArrow = document.getElementsByClassName("navigate-right");
-        if (Reveal.isFirstSlide()) {
-          for(var i = 0; i < rightArrow.length; i++) {
-            rightArrow[i].style.borderLeftColor = "#4D84E0";
-          }
-        }
-        else {
-          for (var i = 0; i < rightArrow.length; i++) {
-            rightArrow[i].style.borderLeftColor = "#fff";
-          }
-        }
-      });
-
-    </script>
-
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
+    });
+  </script>
   </body>
-  </html>
+</html>
