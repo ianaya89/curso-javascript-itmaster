@@ -346,442 +346,261 @@
           </pre>
         </section>
 
+        <section>
+          <h1>Estructuras de Datos</h1>
+        </section>
+
+        <section>
+          <h2><code>Object</code></h2>
+          <pre>
+            <code>
+              // literal notation
+              const obj = {
+                prop1: 'Hello World!',
+
+                method() {
+
+                }
+              };
+
+              obj.prop2 = 'Bye World!';
+
+              console.log(obj.prop1);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>Array</code></h2>
+          <pre>
+            <code>
+              const array = [1, 2, 3];
+              const array2 = ['a', 'b', 'c'];
+              const array3 = [{}, [], 1, true];
+            </code>
+          </pre>
+        </section>
       </section>
 
-    <section>
-      <h3>Hoisting</h3>
-      <p>Independientemente de donde esté la declaración de una variable, ésta es movida al inicio del ámbito al que pertenece (En tiempo de ejecución).</p>
-      <pre>
-        <code>
-          function foo() {
-            alert(x);
-            var x = 10;
-          }
-
-          function foo() {
-            var = x;
-            alert(x);
-            x = 10;
-          }
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Scope</h3>
-      <p>Es el ámbito y contexto de una variable.</p>
-      <p>El ámbito de una variable es el lugar dentro de un programa en el cual dicha variable vive y por lo tanto, donde puede ser usada.</p>
-      <p>Significa que una variable definida dentro de una función (con la palabra reservada var) va a poder ser usada dentro de esa función, pero no fuera de la misma.</p>
-      <p>Las variables declaradas fuera de una función (o sin la palabra var) son denomidas globales y seran accesibles en todos lados.</p>
-    </section>
-
-    <section>
-      <h3>Scope</h3>
-      <pre>
-        <code>
-          // Ejemplo 1
-          var value = 'global';
-
-          function showValue() {
-            alert(value); //global;
-          }
-
-          // Ejemplo 2
-          var value = 'global';
-
-          function showValue() {
-            var value = 'private';
-            alert(value); // private;
-          }
-
-          // Ejemplo 3
-          function showValue() {
-            var value = 'private';
-            alert(value); // private;
-          }
-
-          alert(value); // ERROR
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Closure</h3>
-      <p>En JavaScript podemos definir funciones dentro de otras funciones, pudiendo acceder desde las funciones mas internas al <b>scope</b> de las mas externas (no al reves).</p>
-      <pre>
-        <code>
-          function addAndIncrement(x, y) {
-            var z = x + y;
-
-            function increment() {
-              z += 1;
-            }
-
-            increment();
-
-            return z;
-          }
-
-          addAndIncrement(5, 5); // 11
-          addAndIncrement(1, 1); // 3
-        </code>
-      </pre>
-    </section>
-
-    <section>
-    <h3>Closure</h3>
-    <p>Es la capacidad que tienen las funciones de mantener instancias de variables locales vivas (y conservar su estado) despues de haberse ejecutado.</p>
-      <pre>
-        <code>
-          function wrapValue(value) {
-            var localVar = n;
-
-            return function() {
-              return localVar;
-            }
-          }
-
-          var wrap1 = wrapValue(1);
-          var wrap2 = wrapValue(2);
-
-          wrap1(); // 1
-          wrap2(); // 2
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h2>POO</h2>
-      <p>La programación orientada a objetos es un paradigma de programación que utiliza la abstracción para crear modelos basados ​​en el mundo real.</p>
-      <p><b>TODO puede ser representado como objeto</b></p>
-    </section>
-
-    <section>
-      <h3>Características de POO</h3>
-      <ul>
-        <li>Clase / Prototipo</li>
-        <li>Objeto</li>
-        <li>Propiedad</li>
-        <li>Metodo</li>
-        <li>Constructor</li>
-        <li>Herencia</li>
-        <li>Encapsulamiento</li>
-        <li>Abstracción</li>
-        <li>Polimorfismo</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Estructuras de Datos</h2>
-      <ul>
-        <li>Object</li>
-        <li>Array</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Object</h3>
-      <ul>
-        <li>Tienen propiedades (caracteristicas) y metodos (comportamiento).</li>
-        <li>Son conjuntos de pares clave-valor.</li>
-        <li>Si no es primitivo, es un objeto.</li>
-        <li>Un objeto puede contener otro objeto.</li>
-        <li>Son Mutables</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Instanciación</h3>
-      <pre>
-        <code>
-          // No usar instanciación con new Object().
-
-          // Notación literal.
-          var obj = {
-            prop1: 'Hello World!',
-            method: function() {
-              //..
-            }
-          };
-
-          obj.prop2 = 'Bye World!';
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Acceso a Propiedades</h3>
-      <pre>
-        <code>
-          var Person = {};
-
-          person.name = 'John';
-          person.id = 14;
-
-          person.sayHello = function() {
-            return 'Hello my name is: ' + this.name;
-          }
-
-          alert(person.id);
-          alert(person['id']);
-
-          alert(person.sayHello());
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Object.prototype</h3>
-      <p>Todos los objetos de JavaScript estan linkeados a un objeto <i>prototype</i>.</p>
-      <p>Nos sirve para definir y luego extender comportamiento hacia otras clases (<b>herencia</b>).</p>
-    </section>
-
-    <section>
-     <h3>Usando Constructores</h3>
-      <pre>
-        <code>
-          var Person = function(name, id) {
-            this.name = name;
-            this.id = id;
-          }
-
-          Person.prototype.sayHello = function() {
-            return 'Hello my name is: ' + this.name;
-          }
-
-          var john = new Person('John', 14);
-          var jane = new Person('Jane', 15);
-
-          alert(john.sayHello());
-          alert(jane.sayHello());
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Herencia Pseudoclassical</h3>
-      <pre>
-        <code>
-          // Objeto Padre
-          var Person = function() {
-              this.canTalk = true;
-          };
-
-          // Definicion de metodos
-          Person.prototype.greet = function() {
-            if (this.canTalk) {
-                console.log('Hi');
-            }
-          };
-
-          // Objeto Hijo 1
-          var Employee = function(name, title) {
-              this.name = name;
-              this.title = title;
-          };
-
-          // Aplicacion de Herencia
-          Employee.prototype = new Person();
-
-          // Definicion de metodos
-          Employee.prototype.greet = function() {
-            if (this.canTalk) {
-                console.log('I am ' + this.name);
-            }
-          };
-
-          // Objeto Hijo 2
-          var Customer = function(name) {
-              this.name = name;
-          };
-
-          // Aplicacion de Herencia
-          Customer.prototype = new Person();
-
-          // Instancias
-          var bob = new Employee('Bob','Constructor');
-          var joe = new Customer('Joe');
-          var rg = new Employee('John','Developer');
-          var mike = new Customer('Mike');
-
-          bob.greet();
-          joe.greet();
-          rg.greet();
-          mike.greet();
-        </code>
-      </pre>
-    </section>
-
-    <section>
-     <h3>Herencia con Object.create()</h3>
-     <p>No es compatible con IE8</p>
-      <pre>
-        <code>
-          // Objeto Padre
-          var person = {
-              canTalk: true,
-              greet: function() {
-                if (this.canTalk) {
-                  console.log('Hi');
-                }
-              }
-          };
-
-          // Objeto Hijo
-          var employee = Object.create(person);
-
-          employee.name = 'Bob';
-          employee.title = 'Constructor';
-          employee.greet();
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h2>Array</h2>
-      <p>Estructura de memoria lineal donde los datos son accesibles mediante indices.</p>
-      <p>Son menos eficientes que los arrays de otros lenguages de programacion porque en realidad son objetos.</p>
-      <p>Tanto la longitud del <i>array</i> como sus valores son mutables y el primer indice siempre es es 0.</p>
-    </section>
-
-    <section>
-      <h3>Instanciación</h3>
-      <pre>
-        <code>
-          // No usar instanciación con new Array().
-
-          // Notación literal.
-          var empty = [];
-
-          var nums = [1, 2, 3, 4, 5];
-          var chars = ['a', 'b', 'c', 'd'];
-          var mix = [1, 'a', {name: 'John'}, [4, 5, 6]];
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h3>Acceso y Métodos</h3>
-      <pre>
-        <code>
-          var nums = [1, 23, 56, 78, 81];
-
-          nums[0]; // 1
-
-          nums.push(99);
-          nums.length; // 6
-
-          nums.pop();
-          nums.length; // 5
-
-          delete nums[2]; // [1, 23, undefined, 78, 81];
-
-          nums.splice(2, 1); [1, 23, 78, 81];
-        </code>
-      </pre>
-      <small>Se puede representar una estructura de pila usando los métodos <i>push()</i> y <i>pop()</i></small>
-      <small>Se puede representar una estructura de cola usando los métodos <i>push()</i> y <i>shift()</i></small>
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">MDN:</a><span> más información sobre <i>Array</i></span></li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>for in - Object y Array</h3>
-      <pre>
-        <code>
-          // Object
-          var person = {
-            name: 'John',
-            lastName: 'Doe',
-            age: 27
-          };
-
-          for (var p in person) {
-            alert(person[p]);
-          }
-
-          // Array
-          var years = [2010, 2011, 2012, 2013, 2014, 2015];
-
-          for (var y in years) {
-            alert(years[y]);
-          }
-        </code>
-      </pre>
-    </section>
-
-    <section>
-      <h2>Tips de Sintaxis</h2>
-      <ul>
-        <li>No se tienen en cuenta los espacios en blanco ni los saltos de linea (Es importante el indentado)</li>
-        <li>Es Case Sensitive</li>
-        <li>Usamos <i>camelCase</i> (salvo en los constructores)</li>
-        <li>No se define el tipo de dato de las variables</li>
-        <li>No es obligatorio el ';' al final de cada sentencia (Pero usenlo SIEMPRE!!!)</li>
-        <li>Comentarios en linea con // Comentario</li>
-        <li>Comentarios multilinea con /* Comentario */</li>
-        <li>Se pueden usar tanto comillas simples como comillas dobles</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Ejemplos</h3>
-      <pre>
-          <code>
-            // Espacios y Saltos de linea
-            function sum(x,y){if(x&&y){return x+y;}return 0;}
-
-            function sum(x, y) {
-              if (x && y) {
-                return x + y;
-              }
-
-              return 0;
-            }
-
-            'hello' !== 'HELLO'; // Case Sensitive
-            person !== Person;
-
-            // Comentario en linea
-
-            /*
-
-              Comentario Multilinea
-
-            */
-
-            'hello' === "hello";
-
-          </code>
-        </pre>
-    </section>
-
-    <section>
-      <h3>Palabras Reservadas</h3>
-      <p>Ninguna de estas palabras puede ser utilizada para nomenclar variables ya que se encuentra reservadas para la sintaxis del lenguage.</p>
-      <pre>
-        <code>
-          break case catch class const continue debugger
-          default delete do else enum export extends false
-          finally for function if implements import in
-          instanceof interface let new null package private
-          protected public return static super switch this
-          throw true try typeof var void while with yield
-        </code>
-      </pre>
-    </section>
 
       <section>
-        <h2>Bibliografía</h2>
-        <ul>
-          <li><a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742" target="_blank">"JavaScript: The good parts"</a>, by Douglas Crackford</li>
-          <li><a href="http://effectivejs.com/" target="_blank">"Effective JavaScript"</a>, by David Herman</li>
-          <li><a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527" target="_blank">"JavaScript: The Definitive Guide, 6th Edition"</a>, by David Flanagan</li>
-          <li><a href="http://eloquentjavascript.net/" target="_blank">"Eloquent JavaScript"</a>, by Marijn Haverbeke</li>
-          <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript" target="_blank">MDN</a></li>
-          <li><a href="http://librosweb.es/libro/javascript" target="_blank">LibrosWeb</a></li>
-        </ul>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Conceptos</h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h2>Hoisting</h2>
+          <pre>
+            <code>
+              function foo() {
+                alert(x);
+                var x = 10;
+              }
+
+              function foo() {
+                var = x;
+                alert(x);
+                x = 10;
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Scope</h2>
+          <pre>
+            <code>
+              // ejemplo 1
+              const value = 'global';
+
+              function showValue() {
+                console.log(value); // global;
+              }
+
+              // ejemplo 2
+              const value = 'global';
+
+              function showValue() {
+                const value = 'local';
+                console.log(value); // local;
+              }
+
+              // ejemplo 3
+              function showValue() {
+                const value = 'local';
+                console.log(value); // local;
+              }
+
+              console.log(value); // ERROR
+
+              // ejemplo 4
+              if (true) {
+                const value = 'block';
+                console.log(value) // block
+              }
+
+              console.log(value) // ERROR
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Closure</h2>
+          <pre>
+            <code>
+              function wrapper(value) {
+                const localVar = `[${value}]`;
+
+                return function() {
+                  return localVar;
+                }
+              }
+
+              const wrap1 = wrapper(1);
+              const wrap2 = wrapper(2);
+
+              wrap1(); // [1]
+              wrap2(); // [2]
+            </code>
+          </pre>
+        </section>
+
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">POO</h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+          <!-- <li>Clase / Prototipo</li>
+          <li>Objeto</li>
+          <li>Propiedad</li>
+          <li>Metodo</li>
+          <li>Constructor</li>
+          <li>Herencia</li>
+          <li>Encapsulamiento</li>
+          <li>Abstracción</li>
+          <li>Polimorfismo</li> -->
+        </section>
+
+        <section>
+          <h1>Prototipos</h1>
+        </section>
+
+        <section>
+          <h2><code>Object.prototype</code></h2>
+          <pre>
+            <code>
+              const Person = function(name, id) {
+                this.name = name;
+                this.id = id;
+              }
+
+              Person.prototype.sayHello = function() {
+                return 'Hello my name is: ' + this.name;
+              }
+
+              const john = new Person('John', 14);
+              const jane = new Person('Jane', 15);
+
+              console.log(john.sayHello());
+              console.log(jane.sayHello());
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Herencia</h2>
+          <pre>
+            <code>
+              // padre
+              const Person = function(name, id) {
+                this.name = name;
+                this.id = id;
+              }
+
+              Person.prototype.sayHello = function() {
+                return 'Hello my name is: ' + this.name;
+              }
+
+              // hijo
+              const Child = function() {
+                Person.call(this); //super
+              }
+
+              // herencia
+              Child.prototype = Object.create(Person.prototype);
+              Child.prototype.constructor = Child;
+
+              Child.prototype.eay = function() {
+                return 'eating...';
+              }
+
+              const jack = new Child('Jack', 1234);
+
+              console.log(jack.sayHello());
+              console.log(jack.eat());
+
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>class</h2>
+          <pre>
+            <code>
+              class Person {
+                constructor(name, id) {
+                  this.name = name;
+                  this.id = id;
+                }
+
+                sayHello() {
+                  return 'Hello my name is: ' + this.name;
+                }
+              }
+
+              const john = new Person('John', 14);
+              const jane = new Person('Jane', 15);
+
+              console.log(john.sayHello());
+              console.log(jane.sayHello());
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Herencia</h2>
+          <pre>
+            <code>
+              class Person {
+                constructor(name, id) {
+                  this.name = name;
+                  this.id = id;
+                }
+
+                sayHello() {
+                  return 'Hello my name is: ' + this.name;
+                }
+              }
+
+              class Child extends Person {
+                constructor() {
+                  super();
+                }
+
+                eat() {
+                  return 'eating...';
+                }
+              }
+
+              const jack = new Child('jack', 1234);
+
+              console.log(jack.sayHello());
+              console.log(jack.eat());
+            </code>
+          </pre>
+        </section>
       </section>
 
     </div>
