@@ -20,7 +20,9 @@
   <link rel="stylesheet" href="css/main.css">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
   <!-- If the query includes 'print-pdf', use the PDF print sheet -->
   <script>
@@ -327,6 +329,7 @@
           </code>
         </pre>
       </section> -->
+
     </div>
   </div>
 
@@ -334,43 +337,43 @@
     <a href="index.html">Index</a>
   </div>
 
- <script src="lib/js/head.min.js"></script>
- <script src="js/reveal.min.js"></script>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
 
- <script>
-     // Full list of configuration options available here:
-     // https://github.com/hakimel/reveal.js#configuration
-     Reveal.initialize({
-       controls: true,
-       progress: true,
-       history: true,
-       center: true,
-       slideNumber: true,
+  <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
 
-       theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-       transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
 
-       // Optional libraries used to extend on reveal.js
-       dependencies: [
-       { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-       { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-       ]
-     });
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
 
-     Reveal.addEventListener( 'slidechanged', function( event ) {
-       var rightArrow = document.getElementsByClassName("navigate-right");
-       if(Reveal.isFirstSlide()){
-         for(var i = 0; i < rightArrow.length; i++) {
-           rightArrow[i].style.borderLeftColor = "#4D84E0";
-         }
-       }else{
-         for(var i = 0; i < rightArrow.length; i++) {
-           rightArrow[i].style.borderLeftColor = "#fff";
-         }
-       }
-     });
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
 
-   </script>
+    </script>
 
   </body>
   </html>
