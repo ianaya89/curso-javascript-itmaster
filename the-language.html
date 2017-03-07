@@ -475,6 +475,32 @@
           </pre>
         </section>
 
+        <section>
+          <h1><code>this</code></h1>
+          <pre>
+            <code>
+              console.log(this.document === document); // global
+              console.log(this === window); // global
+
+              function f1() {  return this; }
+              f1() // global
+
+              f1.call({}) || f1.apply({}) || f1.bind({}) // setear this
+
+              () => {} // lexical this
+
+              const o = {
+                a: 1;
+
+                b() { console.log(this) } // objeto
+              }
+
+              const P = function() {}
+              const p = new P() // constructor
+            </code>
+          </pre>
+        </section>
+
       </section>
 
       <section>
