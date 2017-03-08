@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Curso JavaScript y jQuery Intensivo</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1 style="position: absolute; top: 0px;">jQuery</h1>
+        <img  src="img/jquery.png" alt="js" style="width: 50%">
+      </section>
+
+      <section>
+        <section data-background="img/think.gif">
+          <h1 class="white bottom">Que es jQuery?</h1>
+        </section>
+
+        <section>
+          <h2>Libreria para manipular el DOM + Helpers</h2>
+          <h2>📖 ⚒</h2>
+        </section>
+
+        <section>
+          <h2><i>"Write less, do more"
+             <br>... slower</i></h2>
+          <h2>➖ ➕ 🕐</h2>
+        </section>
+
+        <section>
+          <h2><a href="http://youmightnotneedjquery.com/" target="_blank">You might not need jQuery</a></h2>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Implementación</h1>
+          <img  src="img/jquery.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h1>Local</h1>
+          <pre>
+            <code>
+              &lt;script src="js/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>CDN</h1>
+          <pre>
+            <code>
+              &lt;script src="http://code.jquery.com/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>npm, bower o yarn</h1>
+          <pre>
+            <code>
+              &lt;script src="../node_modules/js/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
+            </code>
+          </pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Conceptos</h1>
+          <img  src="img/jquery.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h1>Función Global</h1>
+          <h2><code>$ === jQuery</code></h2>
+        </section>
+
+        <section>
+          <h1>Wrapper</h1>
+          <h2><code>$(element)</code></h2>
+        </section>
+
+        <section>
+          <h1>CSS Selectors</h1>
+          <pre>
+            <code>
+              $('p');
+              $('.item')
+              $('#container')
+
+              $('body p a')
+              $('.list li')
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2><code>$(document).ready</code></h2>
+          <pre>
+            <code contenteditable>
+              $(document).ready(function(){
+                //...
+              });
+
+              $(function(){
+                //...
+              });
+            </code>
+        </section>
+
+        <section>
+          <h1>Encadenamiento</h1>
+          <pre>
+            <code>
+              $('#p1').css('color', 'red').slideUp(2000).slideDown(2000);
+
+              $('#a').hide().fadeIn(2000);
+            </code>
+          </pre>
+        </section>
+
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Funcionalidades</h1>
+          <img  src="img/jquery.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h1>
+            <a href="http://api.jquery.com/category/selectors/" target="_blank">Selectores</a>
+          </h1>
+        </section>
+
+        <section>
+          <h1>
+            <a href="http://api.jquery.com/category/manipulation/" target="_blank">Manipulacion DOM</a>
+          </h1>
+        </section>
+
+        <section>
+          <h1>
+            <a href="http://api.jquery.com/category/events/" target="_blank">Eventos</a>
+          </h1>
+        </section>
+
+        <section>
+          <h1>
+            <a href="http://api.jquery.com/category/effects/" target="_blank">Efectos</a>
+          </h1>
+        </section>
+
+        <section>
+          <h1>Plugins</h1>
+          <pre>
+            <code>
+              jQuery.fn.desaparece = function() {
+                 this.each(function(){
+                    elem = $(this);
+                    elem.css('display', 'none');
+                 });
+                 return this;
+              };
+
+              $('h1').desaparece();
+            </code>
+          </pre>
+        </section>
+      </section>
+
+    </div>
+  </div>
+
+
+ <script src="lib/js/head.min.js"></script>
+ <script src="js/reveal.min.js"></script>
+
+ <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+  </html>
