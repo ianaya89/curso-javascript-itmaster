@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  
+
   <title>Curso JavaScript y jQuery Intensivo</title>
 
   <meta name="description" content="">
@@ -13,12 +13,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="css/reveal.min.css">
-  <link rel="stylesheet" href="css/ionic.css">
-  <!-- <link rel="stylesheet" href="css/site.css"> -->
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
 
-  <!-- For syntax highlighting -->
-  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
 
   <!-- If the query includes 'print-pdf', use the PDF print sheet -->
   <script>
@@ -41,17 +40,6 @@
         </ul>
       </section>
 
-    <section>
-      <h2>REST</h2>
-      <p>Arquitectura de software para sistemas hipermedia distribuidos.</p>
-      <ul>
-        <li>Cliente/Servidor (sin estado)</li> <!-- el serivicio pierde sus datos-->
-        <li>Conjunto de operaciones bien definidas: GET, POST, DELETE, PUT</li>
-        <li>URI</li>
-        <li>Uso de hipermedia (HTML, XML, JSON)</li>
-      </ul>
-      <small>REpresentational State Transfer</small>
-    </section>
 
     <section>
       <h2>JSON</h2>
@@ -68,7 +56,7 @@
           {
            'nombre': 'Ignacio Anaya',
            'edad': 25,
-           'lenguages': ['js', 'c#', 'node', 'python', 'ruby'] 
+           'lenguages': ['js', 'c#', 'node', 'python', 'ruby']
           }
         </code>
       </pre>
@@ -98,7 +86,7 @@
         <code>
           function getMyIP() {
             var xmlhttp = new XMLHttpRequest();
-            
+
             xmlhttp.open('GET','http://api.hostip.info/get_html.php', false);
             xmlhttp.send();
 
@@ -112,13 +100,13 @@
       </pre>
       <!-- http://codepen.io/ianaya89/pen/oXjrew -->
     </section>
-    
+
     <section>
       <h3>Creando Peticiones con jQuery</h3>
       <a href="http://codepen.io/ianaya89/pen/KpMLZa" target="_blank">Ejemplos</a>
       <a href="http://api.jquery.com/category/ajax/" target="_blank">jQuery AJAX Methods</a>
     </section>
-    
+
     </div>
   </div>
 
