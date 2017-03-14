@@ -82,3 +82,11 @@ body {
   background: transparent;
   box-shadow: none;
 }
+
+.gist-data {
+  max-height: 300px !important;
+}
+
+.gist {
+  margin-top: 20px !important;
+}
