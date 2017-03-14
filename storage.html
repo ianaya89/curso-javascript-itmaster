@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Babel | Curso JavaScript | IT Master</title>
+  <title>Storage | Curso JavaScript | IT Master</title>
 
   <meta name="description" content="">
   <meta name="author" content="https://twitter.com/ianaya89">
@@ -36,41 +36,71 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1 style="position: absolute; top: 0px;">Babel</h1>
-        <img src="img/babel.png" alt="js" style="width: 50%; background: #DFCE5B">
+        <h1>Storage</h1>
+        <h2>💾</h2>
       </section>
 
       <section>
         <section>
-          <h1 style="position: absolute; top: 0px;">Setup</h1>
-          <img src="img/babel.png" alt="js" style="width: 50%; background: #DFCE5B">
+          <h1 style="position: absolute; top: 0px;"><code>localStorage</code></h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
         </section>
 
         <section>
-          <h1>Browser</h1>
-          <script src="https://gist.github.com/ianaya89/b6f80f3b775779ce4d0a11dc27245ee2.js"></script>
-        </section>
+          <h1>Sintaxis</h1>
+          <pre>
+            <code>
+              localStorage.setItem('name', 'John');
+              localStorage.getItem('name');
+              localStorage.removeItem('name');
 
-        <section>
-          <h1>npm</h1>
-          <code>npm i -D babel-cli</code>
+              localStorage.clear();
+            </code>
+          </pre>
         </section>
       </section>
 
       <section>
         <section>
-          <h1 style="position: absolute; top: 0px;"><code>Presets</code></h1>
-          <img src="img/babel.png" alt="js" style="width: 50%; background: #DFCE5B">
+          <h1 style="position: absolute; top: 0px;"><code>sessionStorage</code></h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
         </section>
 
         <section>
-          <h1>Instalación</h1>
-          <code>npm i -D babel-preset-env</code>
+          <h1>Sintaxis</h1>
+          <pre>
+            <code>
+              sessionStorage.setItem('name', 'John');
+              sessionStorage.getItem('name');
+              sessionStorage.removeItem('name');
+
+              sessionStorage.clear();
+            </code>
+          </pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">IndexedDB</h1>
+          <img src="img/js2.png" alt="js" style="width: 50%">
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Transpiling</h1>
+          <img src="img/es6.png" alt="js" style="width: 50%">
         </section>
 
         <section>
-          <h1><code>.babelrc</code></h1>
-          <script src="https://gist.github.com/ianaya89/f49bccc084b97346bc3ac7c8ac303c53.js"></script>
+          <h1>Tools 🔩</h1>
+          <ul>
+            <li><a href="">Babel</a></li>
+            <li><a href="">Traceur</a></li>
+            <li><a href="">TypeScript</a></li>
+            <li><a href="">es6-shim</a></li>
+          </ul>
         </section>
 
         <section>
