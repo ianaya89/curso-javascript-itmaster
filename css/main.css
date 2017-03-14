@@ -53,6 +53,10 @@ body {
   box-shadow: none;
 }
 
+.reveal code {
+  color: #3d3d3d;
+}
+
 .white {
   color: #fff !important;
 }
