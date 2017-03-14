@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>El Navegador | Curso JavaScript | IT Master</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+
+  <link rel="icon" sizes="32x32" type="image/png" href="favicon.ico">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>ES-Next</h1>
+        <h2>👏</h2>
+      </section>
+
+      <section>
+        <section data-background='img/wtf.gif'>
+          <h1 class="white">Que ES?</h1>
+        </section>
+
+        <section>
+          <h1>Historia 📚</h1>
+          <ul>
+            <li>Mayo 1995   - JavaScript</li>
+            <li>Agosto 1996 - JSScript </li>
+            <li>Junio 1997  - EcmaScript</li>
+            <li>Julio 2008 - TC39</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>ECMA 📝</h1>
+        </section>
+
+        <section>
+          <h1>EcmaScript ⌨️</h1>
+          <ul>
+            <li>Sintaxis</li>
+            <li>Semantica</li>
+            <li>Librerias</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>TC39 👨‍🌾👩‍🎤👨‍🎨👩‍🔧</h1>
+          <a href="https://github.com/tc39">
+            <img src="img/tc39.png" alt="tc39" style="width: 50%">
+          </a>
+        </section>
+
+        <section>
+          <h2>Versiones</h2>
+          <ul>
+            <li>1997 v1.0</li>
+            <li>1998 v2.0</li>
+            <li>1999 v3.0</li>
+            <li><s>v4.0</s></li>
+            <li>2009 v5.0</li>
+            <li>2011 5.1</li>
+            <li>2015 <s>v6.0</s> v2015</li>
+            <li>2016 <s>v7.0</s> v2016</li>
+            <li>2017 <s>v8.0</s> v2017</li>
+            <li> ?   ES Next</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Lo Nuevo</h1>
+          <img src="img/es6.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h1>
+            <code>() => {}</code>
+          </h1>
+          <div class='gist-container'>
+            <script src="https://gist.github.com/ianaya89/796b6a4d9289f2256b1e577747ced9db.js"></script>
+          </div>
+          <p>
+            <small>NO reemplazan a la funcion tradicional.</small>
+          </p>
+          <p>
+            <small>Usar en <code>callbacks</code>. <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md">(Cuando?)</a></small>
+          </p>
+        </section>
+
+        <section>
+          <h1><i>Tail Calls</i></h1>
+          <script src="https://gist.github.com/ianaya89/9687e492d43e17ac85cb42d1179b2704.js"></script>
+        </section>
+
+        <section>
+          <h1>Promises</h1>
+          <script src="https://gist.github.com/ianaya89/a68bb84aaca8efcc9cb95c3bceb6bd45.js"></script>
+        </section>
+
+        <section>
+          <h1>Block Scoping</h1>
+          <div class='gist-container'>
+            <script src="https://gist.github.com/ianaya89/8fd4527b7633366ce3019685a2aeeb9a.js"></script>
+          </div>
+        </section>
+
+        <section>
+          <h2>Object Literal Extensions</h2>
+          <script src="https://gist.github.com/ianaya89/8aeb3443b598d5bbc13fe39dd30c67f8.js"></script>
+        </section>
+
+        <section>
+          <h1>Desctructuring</h1>
+          <script src="https://gist.github.com/ianaya89/8e2d6edc77d87afb319e1cfaca85f6f8.js"></script>
+        </section>
+
+        <section>
+          <h1><code>Maps & WeakMaps</code></h1>
+          <script src="https://gist.github.com/ianaya89/f7e888bb945f8933e33c99007a63b31f.js"></script>
+        </section>
+
+        <section>
+          <h1><code>Sets & WeakSets</code></h1>
+          <script src="https://gist.github.com/ianaya89/8ac3a72199f6175fe0c357695c338c31.js"></script>
+        </section>
+
+        <section>
+          <h2>Iterator & <code>for..of</code> Loop</h2>
+          <script src="https://gist.github.com/ianaya89/a4088d438c6473a43345c777c3c33ea9.js"></script>
+        </section>
+
+        <section>
+          <h1><code>class</code></h1>
+          <script src="https://gist.github.com/ianaya89/682ad30261b0c799166d4a5f1979c76d.js"></script>
+        </section>
+
+        <section>
+          <h2>Template Literals</h2>
+          <script src="https://gist.github.com/ianaya89/b7168bea03814edadec790db916dc7d4.js"></script>
+        </section>
+
+        <section>
+          <h2>Spread & Rest Operator</h2>
+          <script src="https://gist.github.com/ianaya89/72a1c5abf227fb04ca9b53e28227ebfd.js"></script>
+        </section>
+
+        <section>
+          <h2>Default Parameters</h2>
+          <script src="https://gist.github.com/ianaya89/96a294dbab5e8e3863e24b4bff973bc2.js"></script>
+        </section>
+
+        <section>
+          <h2>Y Más...</h2>
+          <ul>
+            <li><a href="">ES Modules</a></li>
+            <li><a href="">Generators</a></li>
+            <li><a href="">Proxies</a></li>
+            <li><a href="">String API</a></li>
+            <li><a href="">Math API</a></li>
+            <li><a href="">Object API</a></li>
+            <li><a href="">Array API</a></li>
+            <li><a href="">Number API</a></li>
+            <li><a href="">Regex</a></li>
+            <li><a href="">Unicode</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Transpiling</h1>
+          <img src="img/es6.png" alt="js" style="width: 50%">
+        </section>
+
+        <section>
+          <h1>Tools 🔩</h1>
+          <ul>
+            <li><a href="">Babel</a></li>
+            <li><a href="">Traceur</a></li>
+            <li><a href="">TypeScript</a></li>
+            <li><a href="">es6-shim</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><a href="https://github.com/paulmillr/es6-shim/">Shims</a> & Polyfills</h2>
+        </section>
+      </section>
+
+
+      <section>
+        <h1>Soporte 👩‍🔧</h1>
+        <ul>
+          <li><a href="http://caniuse.com/">Can I Use?</a></li>
+          <li><a href="http://kangax.github.io/compat-table/es6/">Kangax</a></li>
+          <li><a href="http://node.green/">Node Green</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Recursos 🙇📖</h1>
+        <ul>
+          <li><a href="http://www.2ality.com/search/label/esnext">2ality</a></li>
+          <li><a href="https://www.nczonline.net/blog/tag/ecmascript-6/">NCZ</a></li>
+          <li><a href="https://github.com/lukehoban/es6features">Lukehoban</a></li>
+          <li><a href="https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20%26%20beyond">ES6 & Beyeond</a> (YDKJS)</li>
+          <li><a href="https://github.com/ericdouglas/ES6-Learning">ES6 Learning</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="index">
+    <a href="index.html">Index</a>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+
+  <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+  </html>
