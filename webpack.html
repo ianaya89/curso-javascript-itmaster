@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Webpack | Curso JavaScript | IT Master</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="https://twitter.com/ianaya89">
+
+  <link rel="icon" sizes="32x32" type="image/png" href="favicon.ico">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+
+</head>
+
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1 style="position: absolute; top: 0px;">Webpack</h1>
+        <img src="img/webpack.png" alt="webpack">
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Module Bundler</h1>
+          <img src="img/webpack.png" alt="webpack">
+        </section>
+
+        <section>
+          <ul>
+            <li>Separar y cargar <i>On Demand</i></li>
+            <li>Mantiene el tiempo de carga</li>
+            <li>"Todo" puede ser un modulo</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Setup</h1>
+          <img src="img/webpack.png" alt="webpack">
+        </section>
+
+        <section>
+          <h1>CLI</h1>
+          <code class="black">npm install --save-dev webpack</code>
+        </section>
+
+        <section>
+          <h1><i>Bundlear</i></h1>
+          <code class="black">webpack ./entry.js bundle.js</code>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">webpack.config.js</h1>
+          <img src="img/webpack.png" alt="webpack">
+        </section>
+
+        <section>
+          <h1>Anatomía Básica</h1>
+          <pre>
+            <code>
+              module.exports = {
+                entry: './src/index.js',
+                output: {
+                  path: __dirname,
+                  filename: 'lib/index.js'
+                },
+                module: {
+                  loaders: [
+                    { test: /\.css$/, loader: 'style-loader!css-loader' },
+                    { test: /\.js$/, loader: 'babel-loader' }
+                  ]
+                }
+              }
+            </code>
+          </pre>
+
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Loaders</h1>
+          <img src="img/webpack.png" alt="webpack">
+        </section>
+
+        <section>
+          <h1>Que Son?</h1>
+          <p>Modulos para cargar modulos NO JS</p>
+        </section>
+
+        <section>
+          <h1><code>babel-loader</code></h1>
+          <p>
+            <code>npm install --save-dev babel-core babel-preset-es2015 babel-loader</code>
+          </p>
+        </section>
+
+        <section>
+          <h2><code>webpack.config.js</code></h2>
+          <pre>
+            <code>
+              // ...
+
+              module: {
+                 loaders: [{
+                     test: /\.js$/,
+                     exclude: /node_modules/,
+                     loader: 'babel-loader'
+                 }]
+             }
+
+             //...
+            </code>
+          </pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1 style="position: absolute; top: 0px;">Plugins</h1>
+          <img src="img/webpack.png" alt="webpack">
+        </section>
+
+        <section>
+          <h1>Para Que ?</h1>
+          <p>Procesos adicionales (minificacion)</p>
+          <p><i>Built in </i> vs. <i>Custom</i></p>
+        </section>
+
+        <section>
+          <h2><code>webpack.config.js</code></h2>
+          <pre>
+            <code>
+              // ...
+
+              plugins: [
+                new webpack.optimize.UglifyJsPlugin({
+                  compress: {
+                    warnings: false,
+                  },
+                  output: {
+                    comments: false,
+                  },
+                }),
+              ]
+
+             //...
+            </code>
+          </pre>
+        </section>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="index">
+    <a href="index.html">Index</a>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+
+  <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        var rightArrow = document.getElementsByClassName("navigate-right");
+        if(Reveal.isFirstSlide()){
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#4D84E0";
+          }
+        }else{
+          for(var i = 0; i < rightArrow.length; i++) {
+            rightArrow[i].style.borderLeftColor = "#fff";
+          }
+        }
+      });
+
+    </script>
+
+  </body>
+  </html>
