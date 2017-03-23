@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Storage | Curso JavaScript | IT Master</title>
+  <title>Web Workers | Curso JavaScript | IT Master</title>
 
   <meta name="description" content="">
   <meta name="author" content="https://twitter.com/ianaya89">
@@ -56,6 +56,7 @@
         <section>
           <h1>Paralelismo</h1>
           <p>Transferencia de mensajes</p>
+          <p>1 worker - 1 archivo js</p>
         </section>
       </section>
 
@@ -70,13 +71,49 @@
           <h1>Creación</h1>
           <pre>
             <code>
-              sessionStorage.setItem('name', 'John');
-              sessionStorage.getItem('name');
-              sessionStorage.removeItem('name');
-
-              sessionStorage.clear();
+              // doWork.js
+              self.addEventListener('message', function(e) {
+                const msg = e.data + ' [worker]';
+                self.postMessage(msg);
+              }, false);
             </code>
           </pre>
+        </section>
+
+        <section>
+          <h1>Implementación</h1>
+          <pre>
+            <code>
+              const worker = new Worker('doWork.js');
+
+              worker.addEventListener('message', function(e) {
+                console.log('Worker said: ', e.data);
+              }, false);
+
+              worker.postMessage('Hello World'); // Send data to our worker.
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h1>Funciones Disponibles</h1>
+          <ul>
+            <li><code>navigator</code></li>
+            <li><code>location</code> (read only)</li>
+            <li><code>XMLHttpRequest</code></li>
+            <li><code>setTimeout() & setInterval()</code></li>
+            <li>Generar subworkers</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Restricciones</h1>
+          <ul>
+            <li>DOM</li>
+            <li><code>document</code></li>
+            <li><code>window</code></li>
+            <li><code>parent</code></li>
+          </ul>
         </section>
       </section>
 
