@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Web Workers | Curso JavaScript | IT Master</title>
+  <title>Web Sockets | Curso JavaScript | IT Master</title>
 
   <meta name="description" content="">
   <meta name="author" content="https://twitter.com/ianaya89">
@@ -36,8 +36,8 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1>Web Workers</h1>
-        <h2>🌎👷🔨</h2>
+        <h1>Web Sockets</h1>
+        <h2>💻 ↔️ 🖲</h2>
       </section>
 
       <section>
@@ -47,23 +47,26 @@
         </section> -->
 
         <section>
-          <h1>Subprocesos</h1>
+          <h1>Conexión Interactiva</h1>
           <p>
-            Ejecutar operaciones intensivas de computos.
+            Client - Servidor (Bidireccional)
           </p>
         </section>
 
         <section>
-          <h1>Paralelismo</h1>
-          <p>Transferencia de mensajes</p>
-          <p>1 worker - 1 archivo js</p>
+          <h1>💻 ➡️ Mensajes</h1>
+        </section>
+
+        <section>
+          <h1>🖲 ➡️ Respuestas</h1>
+          <p>Orientadas a eventos</p>
         </section>
       </section>
 
 
       <section>
         <section>
-          <h1 style="position: absolute; top: 0px;"><code>Worker</code></h1>
+          <h1 style="position: absolute; top: 0px;"><code>WebSocket</code></h1>
           <img src="img/js2.png" alt="js" style="width: 50%">
         </section>
 
@@ -71,50 +74,36 @@
           <h1>Creación</h1>
           <pre>
             <code>
-              // doWork.js
-              self.addEventListener('message', function(e) {
-                const msg = e.data + ' [worker]';
-                self.postMessage(msg);
-              }, false);
+              // Create WebSocket connection.
+              const socket = new WebSocket('ws://localhost:8080');
             </code>
           </pre>
         </section>
 
         <section>
-          <h1>Implementación</h1>
+          <h1>Eventos</h1>
           <pre>
             <code>
-              const worker = new Worker('doWork.js');
+              // Connection opened
+              socket.addEventListener('open', function (event) {
+                  socket.send('Hello Server!');
+              });
 
-              worker.addEventListener('message', function(e) {
-                console.log('Worker said: ', e.data);
-              }, false);
-
-              worker.postMessage('Hello World'); // Send data to our worker.
+              // Listen for messages
+              socket.addEventListener('message', function (event) {
+                  console.log('Message from server', event.data);
+              });
             </code>
           </pre>
         </section>
 
         <section>
-          <h2>Funciones Disponibles</h2>
-          <p><code>DedicatedWorkerGlobalScope</code></p>
-          <ul>
-            <li><code>navigator</code></li>
-            <li><code>location</code> (read only)</li>
-            <li><code>XMLHttpRequest</code></li>
-            <li><code>setTimeout() & setInterval()</code></li>
-            <li>Generar subworkers</li>
-          </ul>
-        </section>
-
-        <section>
-          <h1>Restricciones</h1>
-          <ul>
-            <li>DOM</li>
-            <li><code>document</code></li>
-            <li><code>window</code></li>
-            <li><code>parent</code></li>
-          </ul>
+          <h1><code>close()</code></h1>
+          <pre>
+            <code>
+              socket.close()
+            </code>
+          </pre>
         </section>
       </section>
 
