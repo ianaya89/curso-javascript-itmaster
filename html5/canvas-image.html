@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div>
+      <div class="container border-right">
+        <h2>Images</h2>
+         <img src="http://icons.iconarchive.com/icons/xenatt/minimalism/256/App-Twitter-icon.png" alt="twiiter"/>
+        <img src="http://modeling-languages.com/wp-content/uploads/2014/07/256px-JavaScript-logo.png" alt="JS" />
+      </div>
+
+      <div class="container">
+        <h2>Canvas</h2>
+        <div id="container">
+        </div>
+      </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        function convertImageToCanvas(image) {
+            var canvas = document.createElement("canvas");
+            var context = canvas.getContext("2d");
+
+            console.log(image)
+
+            canvas.width = image.width;
+            canvas.height = image.height;
+            context.drawImage(image, 0, 0);
+
+            container.appendChild(canvas);
+
+            return canvas;
+        }
+
+        const images = document.querySelectorAll('img');
+        images.forEach((i) => {
+          i.addEventListener('load', () => convertImageToCanvas(i))
+        });
+    </script>
+  </body>
+</html>

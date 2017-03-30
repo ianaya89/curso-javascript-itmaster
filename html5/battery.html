@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #batBody {
+      float: left;
+      width: 200px;
+      height: 75px;
+      border: 5px #111 solid;
+      border-radius: 8px;
+    }
+
+    .container {
+      width: 240px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+    }
+
+    .batEnd {
+      float: left;
+      height: 95px;
+      width: 15px;
+    }
+
+    .batEnd div {
+      width: 10px;
+      height: 25px;
+      margin-top: 30px;
+      margin-left: 5px;
+      background-color: #111;
+      border-radius: 0px 30px 30px 0px;
+    }
+
+    #indicator {
+      height: 90%;
+      width: 50%;
+      margin: 3.3px;
+      border-radius: 4px;
+    }
+
+    #indicator.charging {
+      background-color: #4EC259;
+    }
+
+    #indicator.notCharging {
+      background-color: #FFFF91;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="batBody">
+        <div id="indicator">
+        </div>
+      </div>
+      <div class="batEnd">
+        <div></div>
+      </div>
+    </div>
+
+    <script>
+    navigator.getBattery()
+    .then(function (battery) {
+      window.battery = battery;
+      window.indicator = document.querySelector('#indicator');
+      handleBattery();
+    });
+
+    function handleBattery() {
+      if (battery) {
+          battery.addEventListener('chargingchange', updateBatteryStatus);
+          battery.addEventListener('levelchange', updateBatteryStatus);
+          updateBatteryStatus();
+      }
+    }
+
+    function updateBatteryStatus() {
+      if (battery.level * 100 === 100 ) indicator.style.width =  '97%';
+      else indicator.style.width = battery.level * 100 + '%';
+
+      indicator.className = battery.charging ? 'charging' : 'notCharging';
+    }
+    </script>
+  </body>
+</html>
