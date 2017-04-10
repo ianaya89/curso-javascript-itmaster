@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Service Workers | Curso JavaScript | IT Master</title>
+  <title>fetch | Curso JavaScript | IT Master</title>
 
   <meta name="description" content="">
   <meta name="author" content="https://twitter.com/ianaya89">
@@ -36,127 +36,74 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <h1>Service Workers</h1>
-        <h1>📴</h1>
-      </section>
-
-      <section>
         <section>
-          <h1>Offline First</h1>
-          <p><i>Rich offline experiences</i></p>
+          <h1><code>fetch</code></h1>
+          <h1>🔀</h1>
         </section>
 
         <section>
-          <h1>Que son?</h1>
-          <p>Script que corre en background (sin interaccion del usuario)</p>
-        </section>
-
-        <section>
-          <h1>JavaScript Workers</h1>
-          <p>Orientado a eventos</p>
-        </section>
-
-        <section>
-          <h1>Caracteristicas</h1>
-          <ul>
-            <li>Network Proxy</li>
-            <li>Basados en Promesas</li>
-            <li>HTTPS</li>
-          </ul>
-        </section>
-
-        <section>
-          <h1>Ciclo de Vida</h1>
-          <img src="https://developers.google.com/web/fundamentals/getting-started/primers/imgs/sw-lifecycle.png" style="width: 40%">
-        </section>
-      </section>
-
-
-      <section>
-        <section>
-          <h1 style="position: absolute; top: 0px;"><code>serviceWorker</code></h1>
-          <img src="img/js2.png" alt="js" style="width: 50%">
-        </section>
-
-        <section>
-          <h1><code>register()</code></h1>
+          <h1>Ejemplo</h1>
           <pre>
             <code>
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-
-                  navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                      console.log('Success');
-                    }).catch(function(err) {
-                      console.log('Failed!');
-                    });
-
+              fetch('http://url.com', { method: 'get' })
+                .then((response) => {
+                  // 😁
+                }).catch((err) => {
+                  // 😩
                 });
-              }
+            </code>
+          </pre>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h1><code>Headers</code></h1>
+          <pre>
+            <code>
+              const headers = new Headers();
+
+              // Add a few headers
+              headers.append('Content-Type', 'text/plain');
+              headers.append('X-My-Custom-Header', 'CustomValue');
+
+              // Check, get, and set header values
+              headers.has('Content-Type'); // true
+              headers.get('Content-Type'); // "text/plain"
+              headers.set('Content-Type', 'application/json');
+
+              // Delete a header
+              headers.delete('X-My-Custom-Header');
             </code>
           </pre>
         </section>
 
         <section>
-          <h1><code>install</code></h1>
-            <pre>
-              <code>
-                // sw.js
-                self.addEventListener('install', (event) => {
-                  // install steps ...
-                });
-              </code>
-            </pre>
-        </section>
-      </section>
-
-      <section>
-        <section>
-          <h1 style="position: absolute; top: 0px;"><code>cache</code></h1>
-          <img src="img/js2.png" alt="js" style="width: 50%">
-        </section>
-
-        <section>
-            <h2>Cacheo de Recursos</h2>
-            <pre>
-              <code>
-                self.addEventListener('install', (event) => {
-                  event.waitUntil(
-                    caches.open('my-site')
-                      .then((cache) => {
-                        return cache.addAll(['img.jpg']);
-                      })
-                  );
-                });
-              </code>
-            </pre>
-        </section>
-      </section>
-
-      <section>
-        <section>
-          <h1 style="position: absolute; top: 0px;"><code>fetch</code></h1>
-          <img src="img/js2.png" alt="js" style="width: 50%">
-        </section>
-
-        <section>
-          <h2>Proxy</h2>
+          <h1><code>Request</code></h1>
           <pre>
             <code>
-              self.addEventListener('fetch', (event) => {
-                event.respondWith(
-                  caches.match(event.request)
-                    .then((res) => {
-                      if (res) { return res; }
+              const headers = new Headers({ 'Content-Type': 'text/plain' })
+              var request = new Request('http://url.com', { headers });
 
-                      return fetch(event.request);
-                    }
-                  )
-                );
+              fetch(request).then(() => {
+                // ...
               });
             </code>
           </pre>
+        </section>
+
+        <section>
+          <h1><code>Response</code></h1>
+            <pre>
+              <code>
+                fetch('http://url.com').then((res) => {
+	                return res.json();
+                })
+                .then((json) => {
+	                console.log(json);
+                });
+              </code>
+            </pre>
         </section>
       </section>
 
